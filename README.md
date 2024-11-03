@@ -1,3 +1,4 @@
+[![wakatime](https://wakatime.com/badge/user/0f362d83-3d86-4cdb-b58d-28ad23922737/project/76b52458-4d89-42cb-a388-8db5de13302b.svg)](https://wakatime.com/badge/user/0f362d83-3d86-4cdb-b58d-28ad23922737/project/76b52458-4d89-42cb-a388-8db5de13302b)
 # Incratio
 
 The first goal is to kwnow the different tools that can I will use to create the project. This include:
