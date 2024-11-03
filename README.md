@@ -1,10 +1,99 @@
 # Incratio
 
+The first goal is to kwnow the different tools that can I will use to create the project. This include:
+
+- Understeamd the different frameworks tools
+- List all the site with beautifull GUI
+
+## Tools
+  - [Bento](https://bentojs.dev/) //use by google
+  - [Tailwind](https://tailwindcss.com/)
+  - [Framer](https://framer.com/)
+
+## Sites with grate UI
+
+- [Laravel](https://laravel.com/)
+- [Dropbox](https://www.dropbox.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Tailwind](https://tailwindcss.com/)
+- [Figma](https://www.figma.com/)
+- [Framer](https://framer.com/)
+- [TradingView](https://www.tradingview.com/)
+- [PortfolioVisualizer](https://www.portfoliovisualizer.com)
+- [rolling](https://marketlab.pages.dev)
+
+## logo
+
+1. Scelta del Font
+Font per 'INC': Il font attuale è pulito e professionale, il che è adatto per il contesto finanziario. Tuttavia, potresti considerare un font leggermente più moderno e geometrico per dare un tocco di innovazione.
+Font per 'RATIO': Il font in blu funziona bene, ma potrebbe essere utile sperimentare con una versione in grassetto per enfatizzare ulteriormente la parola e bilanciare meglio il logo.
+2. Palette di Colori
+Nero per 'INC': Il colore nero trasmette serietà e professionalità, quindi è una buona scelta. Potresti considerare un grigio scuro per un aspetto leggermente più morbido.
+Blu per 'RATIO': Il blu è eccellente per trasmettere fiducia e sicurezza. Valuta una sfumatura più scura per un aspetto ancora più autorevole.
+3. Icona o Simbolo
+Aggiunta di un'Icona: Considera l'aggiunta di un'icona che rappresenti la crescita o l'analisi statistica. Un grafico a barre o un grafico a linee potrebbe funzionare bene per rappresentare visivamente il concetto di crescita e analisi finanziaria.
+4. Layout
+Allineamento: L'allineamento attuale è pulito, ma puoi sperimentare con un layout impilato (dove 'INC' è sopra 'RATIO') per vedere se migliora la leggibilità e l'impatto visivo.
+Spaziatura: Assicurati che ci sia sufficiente spaziatura tra le lettere per evitare un aspetto troppo affollato, specialmente se utilizzi un font in grassetto per 'RATIO'.
+5. Considerazioni Generali
+Semplicità: Mantieni il design semplice e professionale. Troppi elementi possono distrarre dal messaggio principale.
+Coerenza: Assicurati che tutti gli elementi del logo siano coerenti con il messaggio di affidabilità e professionalità che vuoi trasmettere.
+Spero che questi suggerimenti ti siano utili per migliorare ulteriormente il tuo logo!
+
+![IncRatio Logo](https://github.com/CristianoBerardo/project_X/blob/main/logo/incratio1.png "IncRatio")
+
+# Color
+
+#1A3EAD
+#0c1db5
+#303f7b
+#0e65a7
+#172483
+#1D67D1
+#000088 (Deutsche Bank)
+
+
+## Some possible names
+
+**`Short and Memorable:`**
+
+- DeltaAssets
+
+- AssetDelta
+
+- IncRatio
+
+- AssetInc
+
+- RatioPlus
+
+**`Descriptive and Informative:`**
+
+- IncrementalAssetCalculator
+- AssetRatioAnalysis
+- GrowthRateFinance
+- AssetEfficiencyTracker
+- DeltaAssetGrowth
+
+**`Creative and Catchy:`**
+
+- AssetUp
+- RatioRise
+- GrowthGauge
+- DeltaFinance
+- AssetAccel
+
+
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+
+## Finish your CI setup
+
+[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/8w2bpaCXHH)
+
 
 ## Run tasks
 
@@ -52,30 +141,6 @@ You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx 
 
 [Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
 
 [Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
