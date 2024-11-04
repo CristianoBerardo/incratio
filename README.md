@@ -43,6 +43,12 @@ Spero che questi suggerimenti ti siano utili per migliorare ulteriormente il tuo
 
 ![IncRatio Logo](https://github.com/CristianoBerardo/project_X/blob/main/logo/incratio1.png "IncRatio")
 
+<img src="./logo/IR.svg" width="16px" height="16px" /> <img src="./logo/IR.svg" width="50px" height="50px" /> <img src="./logo/IR.svg" width="150px" height="150px" />
+
+<img src="./logo/IR_balck.svg" width="16px" height="16px" /> <img src="./logo/IR_balck.svg" width="50px" height="50px" /> <img src="./logo/IR_balck.svg" width="150px" height="150px" />
+
+<img src="./logo/IR_DB.svg" width="16px" height="16px" /> <img src="./logo/IR_DB.svg" width="50px" height="50px" /> <img src="./logo/IR_DB.svg" width="150px" height="150px" />
+
 # Color
 
 #1A3EAD
