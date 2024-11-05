@@ -4,7 +4,7 @@
 The first goal is to kwnow the different tools that can I will use to create the project. This include:
 
 - Understeamd the different frameworks tools
-- List all the site with beautifull GUI
+- List all the site with grate GUI
 
 ## Tools
   - [Bento](https://bentojs.dev/) //use by google
