@@ -1,5 +1,5 @@
 
-import Logo from "./Logo/Ir_NavBar_black.png";
+import Logo from "./Logo/IR.png";
 import { ThemeIcon } from '@mantine/core';
 
 import { useDisclosure } from '@mantine/hooks';
