@@ -1,11 +1,32 @@
 export const array = [
-  { date: 'Feb-92', value: 10000 },
-  { date: 'Mar-92', value: 10067.05728 },
-  { date: 'Apr-92', value: 10268.59845 },
-  { date: 'May-92', value: 10121.10059 },
-  { date: 'Jun-92', value: 9684.598741 },
-  { date: 'Jul-92', value: 9600.163271 },
-  { date: 'Aug-92', value: 9165.998811 },
+  {
+    date: 'Feb-92',
+    value: '10000',
+  },
+  {
+    date: 'Mar-92',
+    value: '10067.05728',
+  },
+  {
+    date: 'Apr-92',
+    value: '10268.59845',
+  },
+  {
+    date: 'May-92',
+    value: '10121.10059', 
+  },
+  {
+    date: 'Jun-92',
+    value: '9684.598741',
+  },
+  {
+    date: 'Jul-92',
+    value: '9600.163271',
+  },
+  {
+    date: 'Aug-92',
+    value: '9165.998811',
+  },
   { date: 'Sep-92', value: 9487.416372 },
   { date: 'Oct-92', value: 9915.656471 },
   { date: 'Nov-92', value: 10924.42642 },

@@ -35,6 +35,14 @@ const data = [
   },
 ];
 
+// interface MyObj {
+//   date: string;
+//   value: number;
+// }
+
+// const obj: MyObj = JSON.parse("./sp500_data.json");
+
+
 function Demo() {
   return (
     <AreaChart
