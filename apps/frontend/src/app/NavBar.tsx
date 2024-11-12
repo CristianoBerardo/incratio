@@ -24,10 +24,10 @@ export function NavBar() {
       <AppShell.Main>
         <AppShell.Main pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}>
           <Demo />
+          {/* <Demo />
           <Demo />
           <Demo />
-          <Demo />
-          <Demo />
+          <Demo /> */}
         </AppShell.Main>
       </AppShell.Main>
       <AppShell.Footer>

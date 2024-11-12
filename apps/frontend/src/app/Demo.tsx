@@ -1,4 +1,5 @@
 import { AreaChart } from '@mantine/charts';
+import { array } from './sp500_data';
 
 
 const data = [
@@ -37,15 +38,16 @@ const data = [
 function Demo() {
   return (
     <AreaChart
-      h={300}
-      data={data}
+      h={500}
+      data={array}
       dataKey="date"
-      series={[
-        { name: 'Apples', color: 'indigo.6' },
-        { name: 'Oranges', color: 'blue.6' },
-        { name: 'Tomatoes', color: 'teal.6' },
-      ]}
+      series={[{ name: 'value', color: 'indigo.6' }]}
       curveType="linear"
+      // h={300}
+      // data={data}
+      // dataKey="date"
+      // series={[{ name: 'Apples', color: 'indigo.6' }]}
+      // curveType="linear"
     />
   );
 }
