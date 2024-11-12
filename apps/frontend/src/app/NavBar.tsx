@@ -1,7 +1,7 @@
 import { AppShell, Group, rem, Text } from '@mantine/core';
 import { useHeadroom } from '@mantine/hooks';
-import Logo from './Logo/IR.png';
 import Demo from './Demo';
+import Logo from './Logo/IR.png';
 
 export function NavBar() {
   const pinned = useHeadroom({ fixedAt: 120 });
@@ -22,13 +22,13 @@ export function NavBar() {
         </Group>
       </AppShell.Header>
       <AppShell.Main>
-        <Demo />
-        <Demo />
-        <Demo />
-
-        <Demo />
-
-        <Demo />
+        <AppShell.Main pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}>
+          <Demo />
+          <Demo />
+          <Demo />
+          <Demo />
+          <Demo />
+        </AppShell.Main>
       </AppShell.Main>
       <AppShell.Footer>
         <Text size="xs" style={{ textAlign: 'center' }}>

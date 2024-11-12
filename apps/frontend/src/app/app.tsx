@@ -14,7 +14,7 @@ export function App() {
       {
         <>
           <NavBar />
-          <NxWelcome title="IncRatio" />
+          {/* <NxWelcome title="IncRatio" /> */}
         </>
       }
     </MantineProvider>
