@@ -2,22 +2,20 @@
 
 import { createTheme, MantineProvider } from '@mantine/core';
 import NavBar from './NavBar';
-import NxWelcome from './nx-welcome';
+import Body from './Body';
 
 const theme = createTheme({
   /** Your theme override here */
 });
 
 export function App() {
-  return (
-    <MantineProvider theme={theme}>
-      {
-        <>
-          <NavBar />
-          {/* <NxWelcome title="IncRatio" /> */}
-        </>
-      }
-    </MantineProvider>
-  );
+  return <MantineProvider theme={theme}>{<NavBar />}</MantineProvider>;
 }
+// export function App() {
+//   return <MantineProvider theme={theme}>{
+//     <Body />
+  
+  
+//   }</MantineProvider>;
+// }
 export default App;

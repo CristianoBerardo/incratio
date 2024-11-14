@@ -13,7 +13,7 @@ export const array = [
   },
   {
     date: 'May-92',
-    value: '10121.10059', 
+    value: '10121.10059',
   },
   {
     date: 'Jun-92',
