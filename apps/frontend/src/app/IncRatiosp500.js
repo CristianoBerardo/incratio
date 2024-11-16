@@ -1,11 +1,32 @@
-export const array = [
-  { date: 'Feb-92', value: 10000 },
-  { date: 'Mar-92', value: 10067.05728 },
-  { date: 'Apr-92', value: 10268.59845 },
-  { date: 'May-92', value: 10121.10059 },
-  { date: 'Jun-92', value: 9684.598741 },
-  { date: 'Jul-92', value: 9600.163271 },
-  { date: 'Aug-92', value: 9165.998811 },
+const array = [
+  {
+    date: 'Feb-92',
+    value: '10000',
+  },
+  {
+    date: 'Mar-92',
+    value: '10067.05728',
+  },
+  {
+    date: 'Apr-92',
+    value: '10268.59845',
+  },
+  {
+    date: 'May-92',
+    value: '10121.10059',
+  },
+  {
+    date: 'Jun-92',
+    value: '9684.598741',
+  },
+  {
+    date: 'Jul-92',
+    value: '9600.163271',
+  },
+  {
+    date: 'Aug-92',
+    value: '9165.998811',
+  },
   { date: 'Sep-92', value: 9487.416372 },
   { date: 'Oct-92', value: 9915.656471 },
   { date: 'Nov-92', value: 10924.42642 },
@@ -393,4 +414,134 @@ export const array = [
   { date: 'Sep-24', value: 291767 },
 ];
 
-// console.log('\n\n' + array[0].date);
+function percIncrease(a, b) {
+  let percent;
+  if (b !== 0) {
+    if (a !== 0) {
+      percent = (b / a - 1) * 100;
+    } else {
+      percent = b * 100;
+    }
+  } else {
+    percent = -a * 100;
+  }
+  return Math.round(percent * 100) / 100;
+}
+
+/***
+ * Histogram "bins" numbers in the array X in to group ranges.
+ * Example usage histogram([1,5,2,4,2,5,2,3,1], 2) would return back [5,2,2] where bin ranges are [1-2, 3-4, 5-6] as bin range is 2
+ * Example usage histogram([1,5,2,4,2,5,2,3,1], 1) would return back [2,3,1,1,2] where bin ranges are [1,2,3,4,5] as bin range is 1
+ */
+function histogram(X, binRange) {
+  //inclusive of the first number
+  const max = X[X.length - 1];
+  const min = X[0];
+  const len = max - min + 1;
+  const numberOfBins = Math.ceil(len / binRange);
+  const bins = new Array(numberOfBins).fill(0);
+  //-min to normalise values for the array
+  X.forEach((x) => bins[Math.floor((x - min) / binRange)]++);
+  return bins;
+}
+
+function annualizedReturn(percent, years) {
+  return Math.round((Math.pow(1 + percent / 100, 1 / years) - 1) * 10000) / 100;
+}
+
+const fs = require('fs');
+
+function main() {
+  let totalReturn = 'export const arrayInc = [';
+  let annualReturn = 'export const arrayIncAnnual = [';
+
+  let analysis = 'export const array_analysis = [';
+  const values = [];
+
+  let i, j;
+  for (i = 0, j = 120; i < array.length; i++, j++) {
+    if (j < array.length) {
+      const inc = percIncrease(array[i].value, array[j].value);
+      const incAnn = annualizedReturn(inc, 10);
+
+      values.push(incAnn);
+
+      const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
+      console.log(str);
+
+      totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
+      annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
+
+      analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n},\n`;
+    }
+  }
+
+  values.sort((a, b) => a - b);
+  console.log(values);
+  // const histGenerator = d3.bin().domain([0, 1]).thresholds(19);
+
+  // const bins = histGenerator(values);
+
+  // console.log(bins);
+
+  ranges = 1;
+  bins = histogram(values, ranges);
+  console.log(bins);
+
+  console.log('min: ', Math.ceil(values[0]));
+  console.log('max: ', values[values.length - 1]);
+
+  fs.appendFile('./sp500_smaller.ts', analysis + '];', { flag: 'w' }, (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log('Data written to file');
+    }
+  });
+
+  let hist = 'export const histogram = [';
+
+  let count = 0;
+  for (const element of bins) {
+    hist += `\n{\n\t"range" : "[${Math.ceil(values[0]) + count * ranges}% - ${
+      Math.ceil(values[0]) + (count + 1) * ranges
+    }%)", \n\t"count": "${element}"\n},\n`;
+    count++;
+  }
+
+  fs.appendFile('./sp500_smaller.ts', hist + '];', { flag: 'a' }, (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log('Data written to file');
+    }
+  });
+
+  // fs.appendFile(
+  //   './sp500_analisys.ts',
+  //   totalReturn + '];',
+  //   { flag: 'w' },
+  //   (err) => {
+  //     if (err) {
+  //       console.error(err);
+  //     } else {
+  //       console.log('Data written to file');
+  //     }
+  //   }
+  // );
+
+  // fs.appendFile(
+  //   './sp500_analisys.ts',
+  //   annualReturn + '];',
+  //   { flag: 'a' },
+  //   (err) => {
+  //     if (err) {
+  //       console.error(err);
+  //     } else {
+  //       console.log('Data written to file');
+  //     }
+  //   }
+  // );
+}
+
+main();

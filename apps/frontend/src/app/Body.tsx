@@ -1,11 +1,13 @@
+import { Space } from '@mantine/core';
 import Chart from './Chart';
-import HeaderMenu from './HeaderMenu';
+import NavBar from './NavBar';
 
 export function Body() {
   return (
     <>
-      <HeaderMenu />
-      {/* <Chart /> */}
+      <NavBar />
+      <Space h={90} />
+      <Chart />
     </>
   );
 }
