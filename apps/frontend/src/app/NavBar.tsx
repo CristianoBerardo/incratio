@@ -14,7 +14,24 @@ export function NavBar() {
   });
 
   const handlerHome = () => {
-    window.open('https://github.com/CristianoBerardo');
+    fetch('http://localhost:3001/api/users', {
+      mode: 'no-cors',
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+        if (response.ok) {
+          console.log('Click was recorded');
+          return;
+        }
+        throw new Error('Request failed.');
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
