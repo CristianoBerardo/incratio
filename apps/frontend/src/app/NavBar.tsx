@@ -1,6 +1,6 @@
 import { AppShell, Group, Text, UnstyledButton } from '@mantine/core';
 import { useHeadroom } from '@mantine/hooks';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Logo from './Logo/IR.png';
 
 export function NavBar() {
@@ -13,10 +13,10 @@ export function NavBar() {
     console.log('Home clicked' + data);
   });
 
-  const handlerHome = () => {
-    fetch('http://localhost:3001/api/users', {
+  const handlerHome = async () => {
+    const response = await fetch('http://localhost:3001/api/users', {
       mode: 'no-cors',
-      method: 'post',
+      method: 'get',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -30,9 +30,12 @@ export function NavBar() {
         throw new Error('Request failed.');
       })
       .catch(function (error) {
-        console.log(error);
+        console.log("ERROR OCCURRED: " + error);
       });
+    
+    console.log(response);
   };
+
 
   return (
     <AppShell
