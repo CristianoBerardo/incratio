@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { array_analysis } from '../prova.mjs';
 import { mockUsers } from '../utils/constants.mjs';
 
 const router = Router();
@@ -20,7 +19,7 @@ router.get('/api/users', (req, res) => {
 
   //return all usere when no filter and value is provided
   if (!filter && !value) {
-    return res.status(200).send(array_analysis);
+    return res.status(200).send(mockUsers);
   }
 
   //http://localhost:3000/api/users?filter=username&value=an
@@ -29,7 +28,7 @@ router.get('/api/users', (req, res) => {
     return res.send(result);
   }
 
-  return res.send(array_analysis);
+  return res.send(mockUsers);
 });
 
 router.get(
