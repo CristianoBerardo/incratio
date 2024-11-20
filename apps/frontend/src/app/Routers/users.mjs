@@ -3,6 +3,7 @@ import { mockUsers } from '../utils/constants.mjs';
 
 const router = Router();
 
+
 const middleWare = (req, res, next) => {
   console.log('middleware');
   next();
@@ -13,22 +14,22 @@ router.use(middleWare);
 router.get('/api/users', (req, res) => {
   console.log(req.query);
 
-  const {
-    query: { filter, value },
-  } = req;
+  // const {
+    // query: { filter, value },
+  // } = req;
 
   //return all usere when no filter and value is provided
-  if (!filter && !value) {
+  // if (!filter && !value) {
     return res.status(200).send(mockUsers);
-  }
+  // }
 
   //http://localhost:3000/api/users?filter=username&value=an
-  if (filter && value) {
-    const result = mockUsers.filter((user) => user[filter].includes(value));
-    return res.send(result);
-  }
+  // if (filter && value) {
+  //   const result = mockUsers.filter((user) => user[filter].includes(value));
+  //   return res.send(result);
+  // }
 
-  return res.send(mockUsers);
+  // return res.send(mockUsers);
 });
 
 router.get(

@@ -2,10 +2,16 @@ import express from 'express';
 import userRouter from './Routers/users.mjs';
 import { mockUsers } from './utils/constants.mjs';
 import { resolveIndexUserById } from './utils/middlewares.mjs';
+import cose from 'cors';
 
 const app = express();
 
+app.use(cose());
+
 app.use(express.json());
+
+
+
 
 app.use(userRouter);
 

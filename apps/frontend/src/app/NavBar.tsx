@@ -17,9 +17,6 @@ export function NavBar() {
     const response = await fetch('http://localhost:3001/api/users', {
       mode: 'no-cors',
       method: 'get',
-      headers: {
-        'Content-Type': 'application/json',
-      },
     })
       .then(function (response) {
         console.log(response);
