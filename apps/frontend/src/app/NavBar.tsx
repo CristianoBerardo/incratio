@@ -1,6 +1,6 @@
 import { AppShell, Group, Text, UnstyledButton } from '@mantine/core';
 import { useHeadroom } from '@mantine/hooks';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Logo from './Logo/IR.png';
 
 export function NavBar() {
@@ -14,25 +14,41 @@ export function NavBar() {
   });
 
   const handlerHome = async () => {
-    const response = await fetch('http://localhost:3001/api/users', {
-      mode: 'no-cors',
-      method: 'get',
-    })
-      .then(function (response) {
-        console.log(response);
-        if (response.ok) {
-          console.log('Click was recorded');
-          return;
-        }
-        throw new Error('Request failed.');
-      })
-      .catch(function (error) {
-        console.log("ERROR OCCURRED: " + error);
-      });
-    
-    console.log(response);
-  };
+    try {
+      const response = await fetch('http://localhost:3001/api/users');
+      // const response = await fetch('http://localhost:3001/api/users', {
+      //   mode: 'no-cors',
+      //   method: 'GET',
+      // });
+      //   .catch(function (error) {
+      //   console.log('ERROR OCCURRED: ' + error);
+      // });
+      //   .then(function (response) {
+      //     console.log(response);
+      //     if (response.ok) {
+      //       console.log('Click was recorded');
+      //       return;
+      //     }
+      //     throw new Error('Request failed.');
+      //   })
+      //   .catch(function (error) {
+      //     console.log("ERROR OCCURRED: " + error);
+      //   });
 
+      // console.log(response);
+
+      if (!response) {
+        throw new Error(`Response status: ${response}`);
+      } else {
+        const a = response.body?.getReader();
+        console.log(a);
+        const json = response.body;
+        console.log(json);
+      }
+    } catch (error) {
+      console.error('errore' + error);
+    }
+  };
 
   return (
     <AppShell
