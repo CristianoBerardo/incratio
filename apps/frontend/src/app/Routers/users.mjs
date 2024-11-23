@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { mockUsers } from '../utils/constants.mjs';
+import { array_analysis } from '../sp500_smaller.mjs';
 
 const router = Router();
 
@@ -20,7 +21,7 @@ router.get('/api/users', (req, res) => {
 
   //return all usere when no filter and value is provided
   // if (!filter && !value) {
-    return res.status(200).send(mockUsers);
+    return res.status(200).send(array_analysis);
   // }
 
   //http://localhost:3000/api/users?filter=username&value=an

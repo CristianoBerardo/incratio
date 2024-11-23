@@ -491,7 +491,7 @@ function main() {
   console.log('min: ', Math.ceil(values[0]));
   console.log('max: ', values[values.length - 1]);
 
-  fs.appendFile('./sp500_smaller.ts', analysis + '];', { flag: 'w' }, (err) => {
+  fs.appendFile('./sp500_smaller.mjs', analysis + '];', { flag: 'w' }, (err) => {
     if (err) {
       console.error(err);
     } else {
@@ -509,7 +509,7 @@ function main() {
     count++;
   }
 
-  fs.appendFile('./sp500_smaller.ts', hist + '];', { flag: 'a' }, (err) => {
+  fs.appendFile('./sp500_smaller.mjs', hist + '];', { flag: 'a' }, (err) => {
     if (err) {
       console.error(err);
     } else {

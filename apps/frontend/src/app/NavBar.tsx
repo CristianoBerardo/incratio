@@ -15,11 +15,10 @@ export function NavBar() {
 
   const handlerHome = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/users');
-      // const response = await fetch('http://localhost:3001/api/users', {
-      //   mode: 'no-cors',
-      //   method: 'GET',
-      // });
+      // const response = await fetch('http://localhost:3001/api/users');
+      const response = await fetch('http://localhost:3001/api/users', {
+        method: 'GET',
+      });
       //   .catch(function (error) {
       //   console.log('ERROR OCCURRED: ' + error);
       // });
@@ -40,9 +39,7 @@ export function NavBar() {
       if (!response) {
         throw new Error(`Response status: ${response}`);
       } else {
-        const a = response.body?.getReader();
-        console.log(a);
-        const json = response.body;
+        const json = await response.json();
         console.log(json);
       }
     } catch (error) {
