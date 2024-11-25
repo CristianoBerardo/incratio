@@ -2,6 +2,7 @@ import { AppShell, Group, Text, UnstyledButton } from '@mantine/core';
 import { useHeadroom } from '@mantine/hooks';
 import { useRef } from 'react';
 import Logo from './Logo/IR.png';
+import { MyChart, passParametersToChart } from './Chart';
 
 export function NavBar() {
   const pinned = useHeadroom({ fixedAt: 120 });
@@ -40,7 +41,8 @@ export function NavBar() {
         throw new Error(`Response status: ${response}`);
       } else {
         const json = await response.json();
-        console.log(json);
+        passParametersToChart(json);
+        MyChart();
       }
     } catch (error) {
       console.error('errore' + error);

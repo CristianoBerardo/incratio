@@ -3,6 +3,47 @@ import { Card, Center, Text } from '@mantine/core';
 // import { arrayInc, arrayIncAnnual } from './sp500_analisys';
 import { array_analysis, histogram } from './sp500_smaller';
 
+let dataa: {
+  date: string;
+  'Non-Annualized': string;
+  Annualized: string;
+}[] = [];
+
+export const passParametersToChart = async (
+  data: {
+    date: string;
+    'Non-Annualized': string;
+    Annualized: string;
+  }[]
+) => {
+  dataa = data.concat(dataa); 
+  console.log(dataa);
+
+  const da = [
+    {
+      date: '2021-01-01',
+      'Non-Annualized': '0',
+      Annualized: '0',
+    },
+    {
+      date: '2022-01-01',
+      'Non-Annualized': '200',
+      Annualized: '0',
+    },
+  ];
+
+  dataa.push(da[0]);
+};
+
+export const MyChart = async () => {
+  
+  const sp: Record<string, any>[] = [{ date: '2021-01-01', "value": 0 }];
+
+  return <LineChart data={sp} series={[{name: "value"}]} dataKey={'date'}/>;
+
+};
+
+
 function Chart() {
   return (
     <Center>
@@ -10,10 +51,10 @@ function Chart() {
         <Text mb="md" pl="md">
           Total:
         </Text>
-
+        MyChart();
         <LineChart
           h={500}
-          data={array_analysis}
+          data={dataa}
           dataKey="date"
           series={[{ name: 'Non-Annualized', color: 'indigo.6' }]}
           curveType="linear"
@@ -32,11 +73,9 @@ function Chart() {
           // series={[{ name: 'Apples', color: 'indigo.6' }]}
           // curveType="linear"
         />
-
         <Text mb="md" pl="md" mt="xl">
           Annual Adjusted:
         </Text>
-
         <LineChart
           h={500}
           data={array_analysis}
@@ -57,11 +96,9 @@ function Chart() {
           // series={[{ name: 'Apples', color: 'indigo.6' }]}
           // curveType="linear"
         />
-
         <Text mb="md" pl="md" mt="xl">
           Histogram:
         </Text>
-
         <BarChart
           h={300}
           data={histogram}
@@ -81,11 +118,9 @@ function Chart() {
           orientation="horizontal"
           withBarValueLabel
         />
-
         <Text mb="md" pl="md">
           Total:
         </Text>
-
         <AreaChart
           h={500}
           data={array_analysis}
@@ -109,11 +144,9 @@ function Chart() {
           // series={[{ name: 'Apples', color: 'indigo.6' }]}
           // curveType="linear"
         />
-
         <Text mb="md" pl="md" mt="xl">
           Annual Adjusted:
         </Text>
-
         <AreaChart
           h={500}
           data={array_analysis}
@@ -140,7 +173,6 @@ function Chart() {
         <Text mb="md" pl="md">
           Total:
         </Text>
-
         <AreaChart
           h={500}
           data={array_analysis}
@@ -165,11 +197,9 @@ function Chart() {
           // series={[{ name: 'Apples', color: 'indigo.6' }]}
           // curveType="linear"
         />
-
         <Text mb="md" pl="md" mt="xl">
           Annual Adjusted:
         </Text>
-
         <AreaChart
           h={500}
           data={array_analysis}
