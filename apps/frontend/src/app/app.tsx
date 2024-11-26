@@ -4,7 +4,9 @@ import { createTheme, MantineProvider } from '@mantine/core';
 import Body from './Body';
 
 const theme = createTheme({
-  /** Your theme override here */
+  fontFamily: 'Open Sans, sans-serif',
+  // primaryColor: 'blue',
+  
 });
 
 export function App() {
