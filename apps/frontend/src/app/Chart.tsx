@@ -1,60 +1,57 @@
 import { AreaChart, BarChart, LineChart } from '@mantine/charts';
-import { Card, Center, Text } from '@mantine/core';
-// import { arrayInc, arrayIncAnnual } from './sp500_analisys';
-import { array_analysis, histogram } from './sp500_smaller';
+import { Button, Card, Center, Text } from '@mantine/core';
+import { histogram } from './sp500_smaller';
 
-let dataa: {
+import { useState } from 'react';
+
+interface dataTypes {
   date: string;
-  'Non-Annualized': string;
-  Annualized: string;
-}[] = [];
-
-export const passParametersToChart = async (
-  data: {
-    date: string;
-    'Non-Annualized': string;
-    Annualized: string;
-  }[]
-) => {
-  dataa = data.concat(dataa); 
-  console.log(dataa);
-
-  const da = [
-    {
-      date: '2021-01-01',
-      'Non-Annualized': '0',
-      Annualized: '0',
-    },
-    {
-      date: '2022-01-01',
-      'Non-Annualized': '200',
-      Annualized: '0',
-    },
-  ];
-
-  dataa.push(da[0]);
-};
-
-export const MyChart = async () => {
-  
-  const sp: Record<string, any>[] = [{ date: '2021-01-01', "value": 0 }];
-
-  return <LineChart data={sp} series={[{name: "value"}]} dataKey={'date'}/>;
-
-};
-
+  'Non-Annualized': number;
+  Annualized: number;
+}
 
 function Chart() {
+  const [array_analysis, setArray_analysis] = useState([]);
+
+  const handlerHome = async () => {
+    try {
+      const response = await fetch('http://localhost:3001/api/users', {
+        method: 'GET',
+      });
+
+      if (!response) {
+        throw new Error(`Response status: ${response}`);
+      } else {
+        const json = await response.json();
+        setArray_analysis(json);
+        console.log('required data from backend and create graphs');
+      }
+    } catch (error) {
+      console.error('errore' + error);
+    }
+  };
+
+  const reset = () => {
+    setArray_analysis([]);
+  };
+
   return (
     <Center>
       <Card shadow="sm" padding="lg" radius="lg" withBorder={true} w="95%">
         <Text mb="md" pl="md">
           Total:
         </Text>
-        MyChart();
+
+        <Button onClick={handlerHome}>
+          <Text size="lg">Get sp500 graph</Text>
+        </Button>
+        <Button onClick={reset}>
+          <Text size="lg">reset</Text>
+        </Button>
+
         <LineChart
           h={500}
-          data={dataa}
+          data={array_analysis}
           dataKey="date"
           series={[{ name: 'Non-Annualized', color: 'indigo.6' }]}
           curveType="linear"

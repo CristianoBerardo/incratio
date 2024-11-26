@@ -2,7 +2,6 @@ import { AppShell, Group, Text, UnstyledButton } from '@mantine/core';
 import { useHeadroom } from '@mantine/hooks';
 import { useRef } from 'react';
 import Logo from './Logo/IR.png';
-import { MyChart, passParametersToChart } from './Chart';
 
 export function NavBar() {
   const pinned = useHeadroom({ fixedAt: 120 });
@@ -14,40 +13,9 @@ export function NavBar() {
     console.log('Home clicked' + data);
   });
 
-  const handlerHome = async () => {
-    try {
-      // const response = await fetch('http://localhost:3001/api/users');
-      const response = await fetch('http://localhost:3001/api/users', {
-        method: 'GET',
-      });
-      //   .catch(function (error) {
-      //   console.log('ERROR OCCURRED: ' + error);
-      // });
-      //   .then(function (response) {
-      //     console.log(response);
-      //     if (response.ok) {
-      //       console.log('Click was recorded');
-      //       return;
-      //     }
-      //     throw new Error('Request failed.');
-      //   })
-      //   .catch(function (error) {
-      //     console.log("ERROR OCCURRED: " + error);
-      //   });
-
-      // console.log(response);
-
-      if (!response) {
-        throw new Error(`Response status: ${response}`);
-      } else {
-        const json = await response.json();
-        passParametersToChart(json);
-        MyChart();
-      }
-    } catch (error) {
-      console.error('errore' + error);
-    }
-  };
+  function buttonPressed() {
+    console.log('Home clicked');
+  }
 
   return (
     <AppShell
@@ -61,7 +29,7 @@ export function NavBar() {
 
           <span style={{ flex: 1 }} />
 
-          <UnstyledButton onClick={handlerHome}>
+          <UnstyledButton onClick={buttonPressed}>
             <Text size="lg">Home</Text>
           </UnstyledButton>
           <UnstyledButton>
