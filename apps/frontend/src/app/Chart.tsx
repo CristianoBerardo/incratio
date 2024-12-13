@@ -1,4 +1,4 @@
-import { AreaChart, BarChart, LineChart } from '@mantine/charts';
+import { BarChart, LineChart } from '@mantine/charts';
 import {
   Button,
   Card,
@@ -216,21 +216,24 @@ function Chart() {
         <Text mb="md" pl="md">
           Total:
         </Text>
-        <Button onClick={handlerHome} w={230}>
-          <Text size="lg">Get sp500 graph</Text>
-        </Button>
-        <Space h={10} />
-        <Button onClick={reset} w={230}>
-          <Text size="lg">reset</Text>
-        </Button>
+
+        <Center>
+          <Button onClick={handlerHome} w={230}>
+            <Text size="lg">Get sp500 graph</Text>
+          </Button>
+          <Space w={10} />
+          <Button onClick={reset} w={230}>
+            <Text size="lg">reset</Text>
+          </Button>
+        </Center>
 
         {/* <ChartMantine array_analysis={array_analysis} /> */}
 
-        <Space h={10} />
+        {/* <Space h={10} />
         <Center>
           <ComboBoxTarget arrayOfIndexes={indexes} w={230} />
         </Center>
-        <Space h={10} />
+        <Space h={10} /> */}
 
         {/* <ChartAndComboBox
           w={230}
@@ -283,7 +286,7 @@ function Chart() {
           // curveType="linear"
         />
         <Text mb="md" pl="md" mt="xl">
-          Histogram:
+          Yield distribution:
         </Text>
         <BarChart
           h={300}
@@ -304,6 +307,7 @@ function Chart() {
           orientation="horizontal"
           withBarValueLabel
         />
+        {/*         
         <Text mb="md" pl="md">
           Total:
         </Text>
@@ -409,7 +413,7 @@ function Chart() {
           // dataKey="date"
           // series={[{ name: 'Apples', color: 'indigo.6' }]}
           // curveType="linear"
-        />
+        /> */}
       </Card>
     </Center>
   );
