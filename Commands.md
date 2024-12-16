@@ -10,6 +10,10 @@
 - `npm run start:dev` to start with nodemon
 - `npm run start`
 
+# Start nodemon
+
+- `npm run nodemon` it will start the file [index.ts](./src/index.ts)
+
 # Express
 
 - npm i express-validaror
