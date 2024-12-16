@@ -9,7 +9,6 @@ import {
   TextInput,
   useCombobox,
 } from '@mantine/core';
-import { histogram } from './sp500_smaller';
 
 import { useState } from 'react';
 

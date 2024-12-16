@@ -1,5 +1,8 @@
 import { Router } from 'express';
-import { array_analysis, histogram } from '../../data/sp500_analisys.mjs';
+import {
+  array_analysis,
+  histogram,
+} from '../../../../../src/data/sp500_analisys.mjs';
 
 const router = Router();
 

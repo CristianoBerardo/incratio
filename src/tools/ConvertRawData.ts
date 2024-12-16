@@ -414,112 +414,231 @@ const array = [
   { date: 'Sep-24', value: 291767 },
 ];
 
-function percIncrease(a: number, b: number) {
-  let percent: number;
-  if (b !== 0) {
-    if (a !== 0) {
-      percent = (b / a - 1) * 100;
-    } else {
-      percent = b * 100;
-    }
-  } else {
-    percent = -a * 100;
-  }
-  return Math.round(percent * 100) / 100;
-}
+// export function percIncrease(a: number, b: number) {
+//   let percent: number;
+//   if (b !== 0) {
+//     if (a !== 0) {
+//       percent = (b / a - 1) * 100;
+//     } else {
+//       percent = b * 100;
+//     }
+//   } else {
+//     percent = -a * 100;
+//   }
+//   return Math.round(percent * 100) / 100;
+// }
 
-/***
- * Histogram "bins" numbers in the array X in to group ranges.
- * Example usage histogram([1,5,2,4,2,5,2,3,1], 2) would return back [5,2,2] where bin ranges are [1-2, 3-4, 5-6] as bin range is 2
- * Example usage histogram([1,5,2,4,2,5,2,3,1], 1) would return back [2,3,1,1,2] where bin ranges are [1,2,3,4,5] as bin range is 1
- */
-function histogram(X, binRange: number) {
-  //inclusive of the first number
-  const max = X[X.length - 1];
-  const min = X[0];
-  const len = max - min + 1;
-  const numberOfBins = Math.ceil(len / binRange);
-  const bins = new Array(numberOfBins).fill(0);
-  //-min to normalise values for the array
-  X.forEach((x) => bins[Math.floor((x - min) / binRange)]++);
-  return bins;
-}
+// /***
+//  * Histogram "bins" numbers in the array X in to group ranges.
+//  * Example usage histogram([1,5,2,4,2,5,2,3,1], 2) would return back [5,2,2] where bin ranges are [1-2, 3-4, 5-6] as bin range is 2
+//  * Example usage histogram([1,5,2,4,2,5,2,3,1], 1) would return back [2,3,1,1,2] where bin ranges are [1,2,3,4,5] as bin range is 1
+//  */
+// export function histogram(X: number[], binRange: number) {
+//   //inclusive of the first number
+//   const max = X[X.length - 1];
+//   const min = X[0];
+//   const len = max - min + 1;
+//   const numberOfBins = Math.ceil(len / binRange);
+//   const bins = new Array(numberOfBins).fill(0);
+//   //-min to normalise values for the array
+//   X.forEach((x) => bins[Math.floor((x - min) / binRange)]++);
+//   return bins;
+// }
 
-function annualizedReturn(percent, years) {
-  return Math.round((Math.pow(1 + percent / 100, 1 / years) - 1) * 10000) / 100;
-}
+// export function annualizedReturn(percent: number, years: number) {
+//   return Math.round((Math.pow(1 + percent / 100, 1 / years) - 1) * 10000) / 100;
+// }
 
-const fs = require('fs');
+// const fs = require('fs');
 
-function main() {
-  const nameFile = '../data/sp500_analisys.mjs';
+// export function main() {
+//   const nameFile = `./src/data/sp500_analisys.mjs`;
+
+//   // let totalReturn = 'export const arrayInc = [';
+//   // let annualReturn = 'export const arrayIncAnnual = [';
+
+//   let analysis = 'export const array_analysis = [';
+//   const values: number[] = [];
+
+//   let i: number, j: number;
+//   for (i = 0, j = 120; i < array.length; i++, j++) {
+//     if (j < array.length) {
+//       const first = parseInt(array[i].value.toString(), 10);
+//       const second = parseInt(array[j].value.toString(), 10);
+//       const inc = percIncrease(first, +array[j].value);
+//       const incAnn = annualizedReturn(inc, 10);
+
+//       values.push(incAnn);
+
+//       //const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
+//       //console.log(str);
+
+//       // totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
+//       // annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
+
+//       analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n},\n`;
+//     }
+//   }
+
+//   values.sort((a, b) => a - b);
+//   //console.log(values);
+//   // const histGenerator = d3.bin().domain([0, 1]).thresholds(19);
+
+//   // const bins = histGenerator(values);
+
+//   // console.log(bins);
+
+//   const ranges = 1;
+//   const bins = histogram(values, ranges);
+//   //console.log(bins);
+
+//   //console.log('min: ', Math.ceil(values[0]));
+//   //console.log('max: ', values[values.length - 1]);
+
+//   fs.appendFile(
+//     `${nameFile}`,
+//     analysis + '];',
+//     { flag: 'w' },
+//     (err: string) => {
+//       if (err) {
+//         console.error(err);
+//       } else {
+//         console.log('Data written to file');
+//       }
+//     }
+//   );
+
+//   let hist = 'export const histogram = [';
+
+//   let count = 0;
+//   for (const element of bins) {
+//     hist += `\n{\n\t"range" : "[${Math.ceil(values[0]) + count * ranges}% - ${
+//       Math.ceil(values[0]) + (count + 1) * ranges
+//     }%)", \n\t"count": "${element}"\n},\n`;
+//     count++;
+//   }
+
+//   fs.appendFile(`${nameFile}`, hist + '];', { flag: 'a' }, (err: string) => {
+//     if (err) {
+//       console.error(err);
+//     } else {
+//       console.log('Data written to file');
+//     }
+//   });
+// }
+
+// main();
+
+import fs from 'fs';
+
+export class ConvertRawData {
+  private readonly nameFile = `./src/data/sp500_analisys.mjs`;
+  private analysis = 'export const array_analysis = [';
+  private readonly values: number[] = [];
+
+  //constructor() {}
 
   // let totalReturn = 'export const arrayInc = [';
   // let annualReturn = 'export const arrayIncAnnual = [';
 
-  let analysis = 'export const array_analysis = [';
-  const values: number[] = [];
+  public processData() {
+    let i: number, j: number;
+    for (i = 0, j = 120; i < array.length; i++, j++) {
+      if (j < array.length) {
+        const first = parseInt(array[i].value.toString(), 10);
+        const inc = this.percIncrease(first, +array[j].value);
+        const incAnn = this.annualizedReturn(inc, 10);
 
-  let i: number, j: number;
-  for (i = 0, j = 120; i < array.length; i++, j++) {
-    if (j < array.length) {
-      const first = parseInt(array[i].value.toString(), 10);
-      const second = parseInt(array[j].value.toString(), 10);
-      const inc = percIncrease(first, +array[j].value);
-      const incAnn = annualizedReturn(inc, 10);
+        this.values.push(incAnn);
 
-      values.push(incAnn);
+        //const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
+        //console.log(str);
 
-      const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
-      console.log(str);
+        // totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
+        // annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
 
-      // totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
-      // annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
-
-      analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n},\n`;
+        this.analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n},\n`;
+      }
     }
+
+    this.values.sort((a, b) => a - b);
+    //console.log(values);
+    // const histGenerator = d3.bin().domain([0, 1]).thresholds(19);
+
+    // const bins = histGenerator(values);
+
+    // console.log(bins);
+
+    const ranges = 1;
+    const bins = this.histogram(this.values, ranges);
+    //console.log(bins);
+
+    //console.log('min: ', Math.ceil(values[0]));
+    //console.log('max: ', values[values.length - 1]);
+
+    fs.appendFile(
+      `${this.nameFile}`,
+      this.analysis + '];',
+      { flag: 'w' },
+      (err) => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log('Data written to file');
+        }
+      }
+    );
+
+    let hist = 'export const histogram = [';
+
+    let count = 0;
+    for (const element of bins) {
+      hist += `\n{\n\t"range" : "[${
+        Math.ceil(this.values[0]) + count * ranges
+      }% - ${
+        Math.ceil(this.values[0]) + (count + 1) * ranges
+      }%)", \n\t"count": "${element}"\n},\n`;
+      count++;
+    }
+
+    fs.appendFile(`${this.nameFile}`, hist + '];', { flag: 'a' }, (err) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log('Data written to file');
+      }
+    });
   }
 
-  values.sort((a, b) => a - b);
-  console.log(values);
-  // const histGenerator = d3.bin().domain([0, 1]).thresholds(19);
-
-  // const bins = histGenerator(values);
-
-  // console.log(bins);
-
-  const ranges = 1;
-  const bins = histogram(values, ranges);
-  console.log(bins);
-
-  console.log('min: ', Math.ceil(values[0]));
-  console.log('max: ', values[values.length - 1]);
-
-  fs.appendFile(`${nameFile}`, analysis + '];', { flag: 'w' }, (err) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log('Data written to file');
-    }
-  });
-
-  let hist = 'export const histogram = [';
-
-  let count = 0;
-  for (const element of bins) {
-    hist += `\n{\n\t"range" : "[${Math.ceil(values[0]) + count * ranges}% - ${
-      Math.ceil(values[0]) + (count + 1) * ranges
-    }%)", \n\t"count": "${element}"\n},\n`;
-    count++;
+  public histogram(X: number[], binRange: number) {
+    //inclusive of the first number
+    const max = X[X.length - 1];
+    const min = X[0];
+    const len = max - min + 1;
+    const numberOfBins = Math.ceil(len / binRange);
+    const bins = new Array(numberOfBins).fill(0);
+    //-min to normalise values for the array
+    X.forEach((x) => bins[Math.floor((x - min) / binRange)]++);
+    return bins;
   }
 
-  fs.appendFile(`${nameFile}`, hist + '];', { flag: 'a' }, (err) => {
-    if (err) {
-      console.error(err);
+  private annualizedReturn(percent: number, years: number) {
+    return (
+      Math.round((Math.pow(1 + percent / 100, 1 / years) - 1) * 10000) / 100
+    );
+  }
+
+  private percIncrease(a: number, b: number) {
+    let percent: number;
+    if (b !== 0) {
+      if (a !== 0) {
+        percent = (b / a - 1) * 100;
+      } else {
+        percent = b * 100;
+      }
     } else {
-      console.log('Data written to file');
+      percent = -a * 100;
     }
-  });
+    return Math.round(percent * 100) / 100;
+  }
 }
-
-main();

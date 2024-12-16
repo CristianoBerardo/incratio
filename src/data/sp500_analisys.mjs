@@ -5,12 +5,12 @@ export const array_analysis = [{
 },
 {
 	"date" : "Mar-02", 
-	"Non-Annualized": "386.48", 
+	"Non-Annualized": "386.49", 
 	"Annualized": "17.14"
 },
 {
 	"date" : "Apr-02", 
-	"Non-Annualized": "333.87", 
+	"Non-Annualized": "333.89", 
 	"Annualized": "15.81"
 },
 {
@@ -20,37 +20,37 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jun-02", 
-	"Non-Annualized": "282.95", 
+	"Non-Annualized": "282.97", 
 	"Annualized": "14.37"
 },
 {
 	"date" : "Jul-02", 
-	"Non-Annualized": "263.17", 
+	"Non-Annualized": "263.18", 
 	"Annualized": "13.77"
 },
 {
 	"date" : "Aug-02", 
-	"Non-Annualized": "280.9", 
+	"Non-Annualized": "280.94", 
 	"Annualized": "14.31"
 },
 {
 	"date" : "Sep-02", 
-	"Non-Annualized": "227.08", 
+	"Non-Annualized": "227.1", 
 	"Annualized": "12.58"
 },
 {
 	"date" : "Oct-02", 
-	"Non-Annualized": "240.35", 
+	"Non-Annualized": "240.37", 
 	"Annualized": "13.03"
 },
 {
 	"date" : "Nov-02", 
-	"Non-Annualized": "225.01", 
+	"Non-Annualized": "225.02", 
 	"Annualized": "12.51"
 },
 {
 	"date" : "Dec-02", 
-	"Non-Annualized": "186.25", 
+	"Non-Annualized": "186.27", 
 	"Annualized": "11.09"
 },
 {
@@ -65,22 +65,22 @@ export const array_analysis = [{
 },
 {
 	"date" : "Mar-03", 
-	"Non-Annualized": "143.49", 
+	"Non-Annualized": "143.51", 
 	"Annualized": "9.31"
 },
 {
 	"date" : "Apr-03", 
-	"Non-Annualized": "173.66", 
+	"Non-Annualized": "173.67", 
 	"Annualized": "10.59"
 },
 {
 	"date" : "May-03", 
-	"Non-Annualized": "163.53", 
-	"Annualized": "10.17"
+	"Non-Annualized": "163.55", 
+	"Annualized": "10.18"
 },
 {
 	"date" : "Jun-03", 
-	"Non-Annualized": "167.5", 
+	"Non-Annualized": "167.51", 
 	"Annualized": "10.34"
 },
 {
@@ -90,17 +90,17 @@ export const array_analysis = [{
 },
 {
 	"date" : "Aug-03", 
-	"Non-Annualized": "167.28", 
+	"Non-Annualized": "167.3", 
 	"Annualized": "10.33"
 },
 {
 	"date" : "Sep-03", 
-	"Non-Annualized": "160.25", 
+	"Non-Annualized": "160.27", 
 	"Annualized": "10.04"
 },
 {
 	"date" : "Oct-03", 
-	"Non-Annualized": "166.96", 
+	"Non-Annualized": "166.98", 
 	"Annualized": "10.32"
 },
 {
@@ -110,42 +110,42 @@ export const array_analysis = [{
 },
 {
 	"date" : "Dec-03", 
-	"Non-Annualized": "153.49", 
+	"Non-Annualized": "153.5", 
 	"Annualized": "9.75"
 },
 {
 	"date" : "Jan-04", 
-	"Non-Annualized": "151.2", 
+	"Non-Annualized": "151.22", 
 	"Annualized": "9.65"
 },
 {
 	"date" : "Feb-04", 
-	"Non-Annualized": "162.09", 
-	"Annualized": "10.11"
+	"Non-Annualized": "162.11", 
+	"Annualized": "10.12"
 },
 {
 	"date" : "Mar-04", 
-	"Non-Annualized": "179.98", 
+	"Non-Annualized": "179.99", 
 	"Annualized": "10.84"
 },
 {
 	"date" : "Apr-04", 
-	"Non-Annualized": "177.6", 
+	"Non-Annualized": "177.61", 
 	"Annualized": "10.75"
 },
 {
 	"date" : "May-04", 
-	"Non-Annualized": "177.12", 
+	"Non-Annualized": "177.14", 
 	"Annualized": "10.73"
 },
 {
 	"date" : "Jun-04", 
-	"Non-Annualized": "195.43", 
+	"Non-Annualized": "195.44", 
 	"Annualized": "11.44"
 },
 {
 	"date" : "Jul-04", 
-	"Non-Annualized": "188.12", 
+	"Non-Annualized": "188.14", 
 	"Annualized": "11.16"
 },
 {
@@ -155,22 +155,22 @@ export const array_analysis = [{
 },
 {
 	"date" : "Sep-04", 
-	"Non-Annualized": "182.06", 
+	"Non-Annualized": "182.08", 
 	"Annualized": "10.93"
 },
 {
 	"date" : "Oct-04", 
-	"Non-Annualized": "178.18", 
+	"Non-Annualized": "178.19", 
 	"Annualized": "10.77"
 },
 {
 	"date" : "Nov-04", 
-	"Non-Annualized": "183.55", 
-	"Annualized": "10.98"
+	"Non-Annualized": "183.57", 
+	"Annualized": "10.99"
 },
 {
 	"date" : "Dec-04", 
-	"Non-Annualized": "176.35", 
+	"Non-Annualized": "176.36", 
 	"Annualized": "10.7"
 },
 {
@@ -180,37 +180,37 @@ export const array_analysis = [{
 },
 {
 	"date" : "Feb-05", 
-	"Non-Annualized": "173.89", 
+	"Non-Annualized": "173.9", 
 	"Annualized": "10.6"
 },
 {
 	"date" : "Mar-05", 
-	"Non-Annualized": "178.04", 
+	"Non-Annualized": "178.06", 
 	"Annualized": "10.77"
 },
 {
 	"date" : "Apr-05", 
-	"Non-Annualized": "170.27", 
+	"Non-Annualized": "170.28", 
 	"Annualized": "10.45"
 },
 {
 	"date" : "May-05", 
-	"Non-Annualized": "177.48", 
-	"Annualized": "10.74"
+	"Non-Annualized": "177.49", 
+	"Annualized": "10.75"
 },
 {
 	"date" : "Jun-05", 
-	"Non-Annualized": "179.27", 
+	"Non-Annualized": "179.28", 
 	"Annualized": "10.82"
 },
 {
 	"date" : "Jul-05", 
-	"Non-Annualized": "183.63", 
+	"Non-Annualized": "183.64", 
 	"Annualized": "10.99"
 },
 {
 	"date" : "Aug-05", 
-	"Non-Annualized": "169.75", 
+	"Non-Annualized": "169.76", 
 	"Annualized": "10.43"
 },
 {
@@ -220,17 +220,17 @@ export const array_analysis = [{
 },
 {
 	"date" : "Oct-05", 
-	"Non-Annualized": "162.01", 
+	"Non-Annualized": "162.02", 
 	"Annualized": "10.11"
 },
 {
 	"date" : "Nov-05", 
-	"Non-Annualized": "165.53", 
+	"Non-Annualized": "165.55", 
 	"Annualized": "10.26"
 },
 {
 	"date" : "Dec-05", 
-	"Non-Annualized": "155.93", 
+	"Non-Annualized": "155.94", 
 	"Annualized": "9.85"
 },
 {
@@ -240,17 +240,17 @@ export const array_analysis = [{
 },
 {
 	"date" : "Feb-06", 
-	"Non-Annualized": "146.33", 
+	"Non-Annualized": "146.34", 
 	"Annualized": "9.43"
 },
 {
 	"date" : "Mar-06", 
-	"Non-Annualized": "142.5", 
+	"Non-Annualized": "142.51", 
 	"Annualized": "9.26"
 },
 {
 	"date" : "Apr-06", 
-	"Non-Annualized": "131.84", 
+	"Non-Annualized": "131.86", 
 	"Annualized": "8.77"
 },
 {
@@ -260,7 +260,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jun-06", 
-	"Non-Annualized": "115.02", 
+	"Non-Annualized": "115.03", 
 	"Annualized": "7.96"
 },
 {
@@ -275,22 +275,22 @@ export const array_analysis = [{
 },
 {
 	"date" : "Sep-06", 
-	"Non-Annualized": "124.83", 
+	"Non-Annualized": "124.84", 
 	"Annualized": "8.44"
 },
 {
 	"date" : "Oct-06", 
-	"Non-Annualized": "124.59", 
+	"Non-Annualized": "124.6", 
 	"Annualized": "8.43"
 },
 {
 	"date" : "Nov-06", 
-	"Non-Annualized": "107.31", 
+	"Non-Annualized": "107.32", 
 	"Annualized": "7.56"
 },
 {
 	"date" : "Dec-06", 
-	"Non-Annualized": "110.3", 
+	"Non-Annualized": "110.31", 
 	"Annualized": "7.72"
 },
 {
@@ -305,8 +305,8 @@ export const array_analysis = [{
 },
 {
 	"date" : "Mar-07", 
-	"Non-Annualized": "87.97", 
-	"Annualized": "6.51"
+	"Non-Annualized": "87.98", 
+	"Annualized": "6.52"
 },
 {
 	"date" : "Apr-07", 
@@ -315,7 +315,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "May-07", 
-	"Non-Annualized": "78.46", 
+	"Non-Annualized": "78.47", 
 	"Annualized": "5.96"
 },
 {
@@ -380,7 +380,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jun-08", 
-	"Non-Annualized": "-7.8", 
+	"Non-Annualized": "-7.79", 
 	"Annualized": "-0.81"
 },
 {
@@ -390,7 +390,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Aug-08", 
-	"Non-Annualized": "17.45", 
+	"Non-Annualized": "17.46", 
 	"Annualized": "1.62"
 },
 {
@@ -455,7 +455,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Sep-09", 
-	"Non-Annualized": "-28.78", 
+	"Non-Annualized": "-28.77", 
 	"Annualized": "-3.34"
 },
 {
@@ -560,7 +560,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jun-11", 
-	"Non-Annualized": "-23.82", 
+	"Non-Annualized": "-23.81", 
 	"Annualized": "-2.68"
 },
 {
@@ -600,8 +600,8 @@ export const array_analysis = [{
 },
 {
 	"date" : "Feb-12", 
-	"Non-Annualized": "-3.89", 
-	"Annualized": "-0.4"
+	"Non-Annualized": "-3.88", 
+	"Annualized": "-0.39"
 },
 {
 	"date" : "Mar-12", 
@@ -635,7 +635,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Sep-12", 
-	"Non-Annualized": "63.68", 
+	"Non-Annualized": "63.69", 
 	"Annualized": "5.05"
 },
 {
@@ -685,7 +685,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jul-13", 
-	"Non-Annualized": "76.83", 
+	"Non-Annualized": "76.84", 
 	"Annualized": "5.87"
 },
 {
@@ -695,7 +695,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Sep-13", 
-	"Non-Annualized": "77.67", 
+	"Non-Annualized": "77.68", 
 	"Annualized": "5.92"
 },
 {
@@ -705,7 +705,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Nov-13", 
-	"Non-Annualized": "83.5", 
+	"Non-Annualized": "83.51", 
 	"Annualized": "6.26"
 },
 {
@@ -765,7 +765,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Nov-14", 
-	"Non-Annualized": "129.66", 
+	"Non-Annualized": "129.67", 
 	"Annualized": "8.67"
 },
 {
@@ -785,7 +785,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Mar-15", 
-	"Non-Annualized": "158.58", 
+	"Non-Annualized": "158.59", 
 	"Annualized": "9.97"
 },
 {
@@ -805,7 +805,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jul-15", 
-	"Non-Annualized": "130.42", 
+	"Non-Annualized": "130.43", 
 	"Annualized": "8.71"
 },
 {
@@ -820,7 +820,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Oct-15", 
-	"Non-Annualized": "130.71", 
+	"Non-Annualized": "130.72", 
 	"Annualized": "8.72"
 },
 {
@@ -835,12 +835,12 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jan-16", 
-	"Non-Annualized": "106.53", 
+	"Non-Annualized": "106.54", 
 	"Annualized": "7.52"
 },
 {
 	"date" : "Feb-16", 
-	"Non-Annualized": "102.16", 
+	"Non-Annualized": "102.17", 
 	"Annualized": "7.29"
 },
 {
@@ -870,7 +870,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Aug-16", 
-	"Non-Annualized": "136.48", 
+	"Non-Annualized": "136.49", 
 	"Annualized": "8.99"
 },
 {
@@ -915,12 +915,12 @@ export const array_analysis = [{
 },
 {
 	"date" : "May-17", 
-	"Non-Annualized": "132.8", 
+	"Non-Annualized": "132.81", 
 	"Annualized": "8.82"
 },
 {
 	"date" : "Jun-17", 
-	"Non-Annualized": "135.13", 
+	"Non-Annualized": "135.14", 
 	"Annualized": "8.93"
 },
 {
@@ -945,7 +945,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Nov-17", 
-	"Non-Annualized": "174.63", 
+	"Non-Annualized": "174.64", 
 	"Annualized": "10.63"
 },
 {
@@ -970,7 +970,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Apr-18", 
-	"Non-Annualized": "202.94", 
+	"Non-Annualized": "202.95", 
 	"Annualized": "11.72"
 },
 {
@@ -985,7 +985,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jul-18", 
-	"Non-Annualized": "263.95", 
+	"Non-Annualized": "263.96", 
 	"Annualized": "13.79"
 },
 {
@@ -995,17 +995,17 @@ export const array_analysis = [{
 },
 {
 	"date" : "Sep-18", 
-	"Non-Annualized": "279.92", 
+	"Non-Annualized": "279.93", 
 	"Annualized": "14.28"
 },
 {
 	"date" : "Oct-18", 
-	"Non-Annualized": "288.06", 
+	"Non-Annualized": "288.07", 
 	"Annualized": "14.52"
 },
 {
 	"date" : "Nov-18", 
-	"Non-Annualized": "324.04", 
+	"Non-Annualized": "324.05", 
 	"Annualized": "15.54"
 },
 {
@@ -1015,17 +1015,17 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jan-19", 
-	"Non-Annualized": "348.29", 
+	"Non-Annualized": "348.3", 
 	"Annualized": "16.19"
 },
 {
 	"date" : "Feb-19", 
-	"Non-Annualized": "414.1", 
+	"Non-Annualized": "414.11", 
 	"Annualized": "17.79"
 },
 {
 	"date" : "Mar-19", 
-	"Non-Annualized": "415.35", 
+	"Non-Annualized": "415.37", 
 	"Annualized": "17.82"
 },
 {
@@ -1035,32 +1035,32 @@ export const array_analysis = [{
 },
 {
 	"date" : "May-19", 
-	"Non-Annualized": "363.23", 
+	"Non-Annualized": "363.24", 
 	"Annualized": "16.57"
 },
 {
 	"date" : "Jun-19", 
-	"Non-Annualized": "386.17", 
+	"Non-Annualized": "386.18", 
 	"Annualized": "17.13"
 },
 {
 	"date" : "Jul-19", 
-	"Non-Annualized": "368.03", 
+	"Non-Annualized": "368.04", 
 	"Annualized": "16.69"
 },
 {
 	"date" : "Aug-19", 
-	"Non-Annualized": "353.46", 
+	"Non-Annualized": "353.47", 
 	"Annualized": "16.32"
 },
 {
 	"date" : "Sep-19", 
-	"Non-Annualized": "363.07", 
+	"Non-Annualized": "363.08", 
 	"Annualized": "16.56"
 },
 {
 	"date" : "Oct-19", 
-	"Non-Annualized": "375.65", 
+	"Non-Annualized": "375.66", 
 	"Annualized": "16.88"
 },
 {
@@ -1080,7 +1080,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Feb-20", 
-	"Non-Annualized": "304.13", 
+	"Non-Annualized": "304.14", 
 	"Annualized": "14.99"
 },
 {
@@ -1090,7 +1090,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Apr-20", 
-	"Non-Annualized": "267.43", 
+	"Non-Annualized": "267.44", 
 	"Annualized": "13.9"
 },
 {
@@ -1100,12 +1100,12 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jun-20", 
-	"Non-Annualized": "302.99", 
+	"Non-Annualized": "303", 
 	"Annualized": "14.96"
 },
 {
 	"date" : "Jul-20", 
-	"Non-Annualized": "299.21", 
+	"Non-Annualized": "299.22", 
 	"Annualized": "14.85"
 },
 {
@@ -1115,7 +1115,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Sep-20", 
-	"Non-Annualized": "319.58", 
+	"Non-Annualized": "319.59", 
 	"Annualized": "15.42"
 },
 {
@@ -1130,7 +1130,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Dec-20", 
-	"Non-Annualized": "296.86", 
+	"Non-Annualized": "296.87", 
 	"Annualized": "14.78"
 },
 {
@@ -1140,22 +1140,22 @@ export const array_analysis = [{
 },
 {
 	"date" : "Feb-21", 
-	"Non-Annualized": "299.64", 
+	"Non-Annualized": "299.65", 
 	"Annualized": "14.86"
 },
 {
 	"date" : "Mar-21", 
-	"Non-Annualized": "342.68", 
+	"Non-Annualized": "342.69", 
 	"Annualized": "16.04"
 },
 {
 	"date" : "Apr-21", 
-	"Non-Annualized": "359.71", 
+	"Non-Annualized": "359.72", 
 	"Annualized": "16.48"
 },
 {
 	"date" : "May-21", 
-	"Non-Annualized": "348.84", 
+	"Non-Annualized": "348.85", 
 	"Annualized": "16.2"
 },
 {
@@ -1165,17 +1165,17 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jul-21", 
-	"Non-Annualized": "396.5", 
+	"Non-Annualized": "396.51", 
 	"Annualized": "17.38"
 },
 {
 	"date" : "Aug-21", 
-	"Non-Annualized": "450.83", 
+	"Non-Annualized": "450.84", 
 	"Annualized": "18.6"
 },
 {
 	"date" : "Sep-21", 
-	"Non-Annualized": "439.53", 
+	"Non-Annualized": "439.54", 
 	"Annualized": "18.36"
 },
 {
@@ -1190,12 +1190,12 @@ export const array_analysis = [{
 },
 {
 	"date" : "Dec-21", 
-	"Non-Annualized": "424.81", 
+	"Non-Annualized": "424.82", 
 	"Annualized": "18.03"
 },
 {
 	"date" : "Jan-22", 
-	"Non-Annualized": "392.42", 
+	"Non-Annualized": "392.43", 
 	"Annualized": "17.28"
 },
 {
@@ -1205,7 +1205,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Mar-22", 
-	"Non-Annualized": "368.34", 
+	"Non-Annualized": "368.35", 
 	"Annualized": "16.7"
 },
 {
@@ -1220,7 +1220,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Jun-22", 
-	"Non-Annualized": "307.05", 
+	"Non-Annualized": "307.06", 
 	"Annualized": "15.07"
 },
 {
@@ -1230,12 +1230,12 @@ export const array_analysis = [{
 },
 {
 	"date" : "Aug-22", 
-	"Non-Annualized": "327.98", 
+	"Non-Annualized": "327.99", 
 	"Annualized": "15.65"
 },
 {
 	"date" : "Sep-22", 
-	"Non-Annualized": "298.39", 
+	"Non-Annualized": "298.4", 
 	"Annualized": "14.82"
 },
 {
@@ -1265,27 +1265,27 @@ export const array_analysis = [{
 },
 {
 	"date" : "Mar-23", 
-	"Non-Annualized": "271.1", 
+	"Non-Annualized": "271.11", 
 	"Annualized": "14.01"
 },
 {
 	"date" : "Apr-23", 
-	"Non-Annualized": "273.84", 
+	"Non-Annualized": "273.85", 
 	"Annualized": "14.1"
 },
 {
 	"date" : "May-23", 
-	"Non-Annualized": "275.21", 
+	"Non-Annualized": "275.22", 
 	"Annualized": "14.14"
 },
 {
 	"date" : "Jun-23", 
-	"Non-Annualized": "300.89", 
+	"Non-Annualized": "300.9", 
 	"Annualized": "14.9"
 },
 {
 	"date" : "Jul-23", 
-	"Non-Annualized": "293.91", 
+	"Non-Annualized": "293.92", 
 	"Annualized": "14.69"
 },
 {
@@ -1295,7 +1295,7 @@ export const array_analysis = [{
 },
 {
 	"date" : "Sep-23", 
-	"Non-Annualized": "290.18", 
+	"Non-Annualized": "290.19", 
 	"Annualized": "14.58"
 },
 {
@@ -1305,8 +1305,8 @@ export const array_analysis = [{
 },
 {
 	"date" : "Nov-23", 
-	"Non-Annualized": "277.77", 
-	"Annualized": "14.21"
+	"Non-Annualized": "277.78", 
+	"Annualized": "14.22"
 },
 {
 	"date" : "Dec-23", 
@@ -1320,27 +1320,27 @@ export const array_analysis = [{
 },
 {
 	"date" : "Feb-24", 
-	"Non-Annualized": "318.74", 
+	"Non-Annualized": "318.75", 
 	"Annualized": "15.4"
 },
 {
 	"date" : "Mar-24", 
-	"Non-Annualized": "328.43", 
+	"Non-Annualized": "328.44", 
 	"Annualized": "15.66"
 },
 {
 	"date" : "Apr-24", 
-	"Non-Annualized": "313.3", 
+	"Non-Annualized": "313.31", 
 	"Annualized": "15.25"
 },
 {
 	"date" : "May-24", 
-	"Non-Annualized": "311.27", 
+	"Non-Annualized": "311.28", 
 	"Annualized": "15.19"
 },
 {
 	"date" : "Jun-24", 
-	"Non-Annualized": "324.72", 
+	"Non-Annualized": "324.73", 
 	"Annualized": "15.56"
 },
 {
