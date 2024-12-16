@@ -7,7 +7,9 @@
     "frontend": "nx serve frontend  --port 3000",
     "buildAll": "npx nx run-many -t build",
     "start:dev": "nodemon ./apps/frontend/src/app/index.mjs",
-    "start": "node ./apps/frontend/src/app/index.mjs"
+    "start": "node ./apps/frontend/src/app/index.mjs",
+    "start-nodemon": "nodemon",
+    "start-index": "tsc && node dist/index.js"
   },
   "private": true,
   "dependencies": {

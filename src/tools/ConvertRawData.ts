@@ -414,8 +414,8 @@ const array = [
   { date: 'Sep-24', value: 291767 },
 ];
 
-function percIncrease(a, b) {
-  let percent;
+function percIncrease(a: number, b: number) {
+  let percent: number;
   if (b !== 0) {
     if (a !== 0) {
       percent = (b / a - 1) * 100;
@@ -433,7 +433,7 @@ function percIncrease(a, b) {
  * Example usage histogram([1,5,2,4,2,5,2,3,1], 2) would return back [5,2,2] where bin ranges are [1-2, 3-4, 5-6] as bin range is 2
  * Example usage histogram([1,5,2,4,2,5,2,3,1], 1) would return back [2,3,1,1,2] where bin ranges are [1,2,3,4,5] as bin range is 1
  */
-function histogram(X, binRange) {
+function histogram(X, binRange: number) {
   //inclusive of the first number
   const max = X[X.length - 1];
   const min = X[0];
@@ -452,19 +452,20 @@ function annualizedReturn(percent, years) {
 const fs = require('fs');
 
 function main() {
+  const nameFile = '../data/sp500_analisys.mjs';
 
-  const nameFile = 'sp500_analisys.mjs';
-
-  let totalReturn = 'export const arrayInc = [';
-  let annualReturn = 'export const arrayIncAnnual = [';
+  // let totalReturn = 'export const arrayInc = [';
+  // let annualReturn = 'export const arrayIncAnnual = [';
 
   let analysis = 'export const array_analysis = [';
-  const values = [];
+  const values: number[] = [];
 
-  let i, j;
+  let i: number, j: number;
   for (i = 0, j = 120; i < array.length; i++, j++) {
     if (j < array.length) {
-      const inc = percIncrease(array[i].value, array[j].value);
+      const first = parseInt(array[i].value.toString(), 10);
+      const second = parseInt(array[j].value.toString(), 10);
+      const inc = percIncrease(first, +array[j].value);
       const incAnn = annualizedReturn(inc, 10);
 
       values.push(incAnn);
@@ -472,8 +473,8 @@ function main() {
       const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
       console.log(str);
 
-      totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
-      annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
+      // totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
+      // annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
 
       analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n},\n`;
     }
@@ -487,14 +488,14 @@ function main() {
 
   // console.log(bins);
 
-  ranges = 1;
-  bins = histogram(values, ranges);
+  const ranges = 1;
+  const bins = histogram(values, ranges);
   console.log(bins);
 
   console.log('min: ', Math.ceil(values[0]));
   console.log('max: ', values[values.length - 1]);
 
-  fs.appendFile(`../data/${nameFile}`, analysis + '];', { flag: 'w' }, (err) => {
+  fs.appendFile(`${nameFile}`, analysis + '];', { flag: 'w' }, (err) => {
     if (err) {
       console.error(err);
     } else {
@@ -512,39 +513,13 @@ function main() {
     count++;
   }
 
-  fs.appendFile(`../data/${nameFile}`, hist + '];', { flag: 'a' }, (err) => {
+  fs.appendFile(`${nameFile}`, hist + '];', { flag: 'a' }, (err) => {
     if (err) {
       console.error(err);
     } else {
       console.log('Data written to file');
     }
   });
-
-  // fs.appendFile(
-  //   './sp500_analisys.ts',
-  //   totalReturn + '];',
-  //   { flag: 'w' },
-  //   (err) => {
-  //     if (err) {
-  //       console.error(err);
-  //     } else {
-  //       console.log('Data written to file');
-  //     }
-  //   }
-  // );
-
-  // fs.appendFile(
-  //   './sp500_analisys.ts',
-  //   annualReturn + '];',
-  //   { flag: 'a' },
-  //   (err) => {
-  //     if (err) {
-  //       console.error(err);
-  //     } else {
-  //       console.log('Data written to file');
-  //     }
-  //   }
-  // );
 }
 
 main();

@@ -187,18 +187,20 @@ function ComboBoxTarget({
 
 function Chart() {
   const [array_analysis, setArray_analysis] = useState([]);
+  const [histogram, setHistogram] = useState([]);
 
   const handlerHome = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/users', {
-        method: 'GET',
+      const response = await fetch('http://localhost:3001/api/sp500', {
+        method: 'POST',
       });
 
       if (!response) {
         throw new Error(`Response status: ${response}`);
       } else {
         const json = await response.json();
-        setArray_analysis(json);
+        setArray_analysis(json.array_analysis);
+        setHistogram(json.histogram);
         console.log('required data from backend and create graphs');
       }
     } catch (error) {
@@ -208,6 +210,7 @@ function Chart() {
 
   const reset = () => {
     setArray_analysis([]);
+    setHistogram([]);
   };
 
   return (

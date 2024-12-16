@@ -4,7 +4,13 @@
 - `git fetch`
 - `git pull`
 
-# express
+# Start frontend and express server
+
+- `npm run frontend`
+- `npm run start:dev` to start with nodemon
+- `npm run start`
+
+# Express
 
 - npm i express-validaror
 
