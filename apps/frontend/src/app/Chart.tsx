@@ -265,7 +265,7 @@ function Chart() {
           // curveType="linear"
         />
         <Text mb="md" pl="md" mt="xl">
-          Annual Adjusted:
+          Annual Adjusted (CAGR):
         </Text>
         <LineChart
           h={500}
