@@ -7,7 +7,7 @@
 # Start frontend and express server
 
 - `npm run frontend`
-- `npm run start:dev` to start with nodemon
+- `npm run start:dev` to start with nodemon ./apps/frontend/src/app/index.mjs
 - `npm run start`
 
 # Start nodemon
