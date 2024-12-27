@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "nodenext",
     "sourceMap": true,
     "outDir": "dist",
+
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }
