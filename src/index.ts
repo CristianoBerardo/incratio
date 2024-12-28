@@ -18,7 +18,6 @@ const fun = async (): Promise<string> => {
       date: quotes[i].date.toLocaleDateString(),
       value: quotes[i].adjclose,
     };
-    
   }
   writeFileSync('./src/data/sp500TR-data_adjclose.json', JSON.stringify(res), {
     flag: 'w',
