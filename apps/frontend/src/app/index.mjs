@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
-import sp500Router from './Routers/sp500.mjs';
 import getRouter from './Routers/get.mjs';
+import sp500Router from './Routers/sp500.mjs';
 
 const app = express();
 

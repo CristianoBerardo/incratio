@@ -190,8 +190,11 @@ function Chart() {
 
   const handlerHome = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/sp500', {
-        method: 'POST',
+      // const response = await fetch('http://localhost:3001/api/sp500', {
+      //   method: 'POST',
+      // });
+      const response = await fetch('http://localhost:3001/api/getsp500json', {
+        method: 'GET',
       });
 
       if (!response) {

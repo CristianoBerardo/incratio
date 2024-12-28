@@ -1,5 +1,6 @@
 import { writeFileSync } from 'fs';
 import yahooFinance from 'yahoo-finance2';
+import { ConvertRawData } from './tools/ConvertRawData';
 
 const fun = async (): Promise<string> => {
   const query = 'VWCE.MI';
@@ -15,4 +16,4 @@ const fun = async (): Promise<string> => {
 
 fun().then((res) => console.log(res));
 
-// new ConvertRawData().processData();
+new ConvertRawData().processData();

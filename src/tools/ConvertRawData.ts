@@ -532,8 +532,8 @@ const array = [
 import fs from 'fs';
 
 export class ConvertRawData {
-  private readonly nameFile = `./src/data/sp500_analisys.mjs`;
-  private analysis = 'export const array_analysis = [';
+  private readonly nameFile = `./src/data/sp500_analisys.json`;
+  private analysis = '{"array_analysis" : [';
   private readonly values: number[] = [];
 
   //constructor() {}
@@ -543,23 +543,36 @@ export class ConvertRawData {
 
   public processData() {
     let i: number, j: number;
-    for (i = 0, j = 120; i < array.length; i++, j++) {
-      if (j < array.length) {
-        const first = parseInt(array[i].value.toString(), 10);
-        const inc = this.percIncrease(first, +array[j].value);
-        const incAnn = this.annualizedReturn(inc, 10);
+    for (i = 0, j = 120; i < array.length - 1, j < array.length - 1; i++, j++) {
+      // if (j < array.length) {
+      const first = parseInt(array[i].value.toString(), 10);
+      const inc = this.percIncrease(first, +array[j].value);
+      const incAnn = this.annualizedReturn(inc, 10);
 
-        this.values.push(incAnn);
+      this.values.push(incAnn);
 
-        //const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
-        //console.log(str);
+      //const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
+      //console.log(str);
 
-        // totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
-        // annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
+      // totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
+      // annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
 
-        this.analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n},\n`;
-      }
+      this.analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n},\n`;
+      // }
     }
+    const first = parseInt(array[i].value.toString(), 10);
+    const inc = this.percIncrease(first, +array[j].value);
+    const incAnn = this.annualizedReturn(inc, 10);
+
+    this.values.push(incAnn);
+
+    //const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
+    //console.log(str);
+
+    // totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
+    // annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
+
+    this.analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n}\n`;
 
     this.values.sort((a, b) => a - b);
     //console.log(values);
@@ -578,7 +591,7 @@ export class ConvertRawData {
 
     fs.appendFile(
       `${this.nameFile}`,
-      this.analysis + '];',
+      this.analysis + '],',
       { flag: 'w' },
       (err) => {
         if (err) {
@@ -589,19 +602,34 @@ export class ConvertRawData {
       }
     );
 
-    let hist = 'export const histogram = [';
+    let hist = '"histogram" : [';
 
     let count = 0;
-    for (const element of bins) {
+    let index: number;
+    for (index = 0; index < bins.length - 1; index++) {
       hist += `\n{\n\t"range" : "[${
         Math.ceil(this.values[0]) + count * ranges
       }% - ${
         Math.ceil(this.values[0]) + (count + 1) * ranges
-      }%)", \n\t"count": "${element}"\n},\n`;
+      }%)", \n\t"count": "${bins[index]}"\n},\n`;
       count++;
     }
+    hist += `\n{\n\t"range" : "[${
+      Math.ceil(this.values[0]) + count * ranges
+    }% - ${
+      Math.ceil(this.values[0]) + (count + 1) * ranges
+    }%)", \n\t"count": "${bins[index]}"\n}\n`;
 
-    fs.appendFile(`${this.nameFile}`, hist + '];', { flag: 'a' }, (err) => {
+    // for (const element of bins {
+    //   hist += `\n{\n\t"range" : "[${
+    //     Math.ceil(this.values[0]) + count * ranges
+    //   }% - ${
+    //     Math.ceil(this.values[0]) + (count + 1) * ranges
+    //   }%)", \n\t"count": "${element}"\n},\n`;
+    //   count++;
+    // }
+
+    fs.appendFile(`${this.nameFile}`, hist + ']}', { flag: 'a' }, (err) => {
       if (err) {
         console.error(err);
       } else {
