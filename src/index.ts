@@ -2,7 +2,7 @@ import { writeFileSync } from 'fs';
 import yahooFinance from 'yahoo-finance2';
 import { ConvertRawData } from './tools/ConvertRawData';
 
-const fun = async (): Promise<string> => {
+export const function_get_from_yf = async (): Promise<string> => {
   const query = '^SP500TR';
   const queryOptions = { period1: '1960-01-01' };
   const result = await yahooFinance.chart(query, queryOptions);
@@ -19,7 +19,7 @@ const fun = async (): Promise<string> => {
       value: quotes[i].adjclose,
     };
   }
-  writeFileSync('./src/data/sp500TR-data_adjclose.json', JSON.stringify(res), {
+  writeFileSync(`./src/data/${query}_adjclose.json`, JSON.stringify(res), {
     flag: 'w',
   });
 
@@ -28,7 +28,7 @@ const fun = async (): Promise<string> => {
 
 // console.log(result);
 
-fun().then((res) => console.log(res));
+function_get_from_yf().then((res) => console.log(res));
 
 const convertData = new ConvertRawData();
 convertData.readData();
