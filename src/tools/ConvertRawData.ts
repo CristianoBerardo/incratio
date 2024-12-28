@@ -530,49 +530,77 @@ const array = [
 // main();
 
 import fs from 'fs';
-
+import path from 'path';
 export class ConvertRawData {
   private readonly nameFile = `./src/data/sp500_analisys.json`;
   private analysis = '{"array_analysis" : [';
   private readonly values: number[] = [];
 
-  //constructor() {}
+  private readonly __filename = __filename;
+  private readonly __dirname = __dirname;
+  private readonly path = path.resolve(
+    __dirname,
+    '../data/sp500TR-data_adjclose.json'
+  );
 
+  private data;
   // let totalReturn = 'export const arrayInc = [';
   // let annualReturn = 'export const arrayIncAnnual = [';
 
+  public async readData() {
+    const filePath = path.resolve(
+      __dirname,
+      '../data/sp500TR-data_adjclose.json'
+    );
+
+    try {
+      const data = await fs.readFileSync(filePath);
+      const jsonData = JSON.parse(data.toString('utf-8'));
+      this.data = jsonData;
+      //console.log(this.data); // This will now print the correct result
+    } catch (err) {
+      console.error(err);
+    }
+
+    this.processData();
+  }
+
   public processData() {
     let i: number, j: number;
-    for (i = 0, j = 120; i < array.length - 1, j < array.length - 1; i++, j++) {
-      // if (j < array.length) {
-      const first = parseInt(array[i].value.toString(), 10);
-      const inc = this.percIncrease(first, +array[j].value);
+    for (
+      i = 0, j = 252*10;
+      i < this.data.length - 1, j < this.data.length - 1;
+      i++, j++
+    ) {
+      // if (j < this.data.length) {
+      const first = parseInt(this.data[i].value.toString(), 10);
+      const inc = this.percIncrease(first, +this.data[j].value);
       const incAnn = this.annualizedReturn(inc, 10);
 
       this.values.push(incAnn);
 
-      //const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
+      //const str = this.data[i].date + ' to ' + this.data[j].date + ' : ' + inc + '%';
       //console.log(str);
 
-      // totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
-      // annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
+      // totalReturn += `{\n\t"date" : "${this.data[j].date}", \n\t"sp500": "${inc}"\n},\n`;
+      // annualReturn += `{\n\t"date" : "${this.data[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
 
-      this.analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n},\n`;
+      this.analysis += `{\n\t"date" : "${this.data[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n},\n`;
       // }
     }
-    const first = parseInt(array[i].value.toString(), 10);
-    const inc = this.percIncrease(first, +array[j].value);
+    const first = parseInt(this.data[i].value.toString(), 10);
+    const inc = this.percIncrease(first, +this.data[j].value);
     const incAnn = this.annualizedReturn(inc, 10);
 
     this.values.push(incAnn);
 
-    //const str = array[i].date + ' to ' + array[j].date + ' : ' + inc + '%';
+    //const str = this.data[i].date + ' to ' + this.data[j].date + ' : ' + inc + '%';
     //console.log(str);
 
-    // totalReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${inc}"\n},\n`;
-    // annualReturn += `{\n\t"date" : "${array[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
+    // totalReturn += `{\n\t"date" : "${this.data[j].date}", \n\t"sp500": "${inc}"\n},\n`;
+    // annualReturn += `{\n\t"date" : "${this.data[j].date}", \n\t"sp500": "${incAnn}"\n},\n`;
 
-    this.analysis += `{\n\t"date" : "${array[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n}\n`;
+    this.analysis += `{\n\t"date" : "${this.data[j].date}", \n\t"Non-Annualized": "${inc}", \n\t"Annualized": "${incAnn}"\n}\n`;
 
     this.values.sort((a, b) => a - b);
     //console.log(values);
