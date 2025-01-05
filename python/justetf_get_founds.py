@@ -31,10 +31,20 @@ accept_cookies.click()
 
 driver.implicitly_wait(1) # seconds
 
+
+# driver.maximize_window()
+driver.execute_script("document.body.style.zoom='25%'")
+
+i = 0
+while i <= 40:
+  driver.execute_script(f"window.scrollTo({i*1440}, {(i+1) * 1440})")
+  time.sleep(5)
+  i += 1
+
 rows = driver.find_elements(By.XPATH, "//tr[@role='row']")
 
 
-print(len(rows))
+print(f"Righe lette: {len(rows)}")
 
 with open(filename, mode='w', newline='') as file:
     writer = csv.writer(file, delimiter = ";")
