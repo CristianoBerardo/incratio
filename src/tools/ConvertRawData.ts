@@ -420,7 +420,7 @@ export class ConvertRawData {
   private readonly nameFile = `./src/data/sp500_analisys.json`;
   private analysis = '{"array_analysis" : [';
   private readonly values: number[] = [];
-  private readonly totalMarketDays = 252;
+  private readonly totalMarketDays = 262; // coletti approuved
   private readonly rollingYears = 10;
 
   private readonly path = path.resolve(
