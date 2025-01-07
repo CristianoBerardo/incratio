@@ -101,6 +101,32 @@ class AssetScraping:
 
       except Exception as e:
         print("Could not extract ISIN:", e)
+    
+    def merge_isin(self, isin_values: str, json_file_isin_merged:str):
+      try:
+        
+        merged_isin = set()
+
+        with open(isin_values, mode='r', encoding='utf-8') as f:
+          data = json.load(f)
+          curvo_isin = data.get('curvo_isin')
+          justetf_isin = data.get('justetf_isin')
+
+          merged_isin.update(curvo_isin)
+          merged_isin.update(justetf_isin)
+        
+        data = {
+          'metadata': {
+            'title': 'ISIN values from Curvo and JustETF', 
+            'length': len(merged_isin)
+            },
+          'isin': list(merged_isin)
+        }
+        with open(json_file_isin_merged, mode='w', encoding='utf-8') as f:
+          json.dump(data, f, ensure_ascii=False, indent=4)
+
+      except Exception as e:
+        print("Could not merge ISIN:", e)
 
     def __del__(self):
       self.driver.quit()
@@ -221,7 +247,9 @@ justetf = JustETF('https://www.justetf.com/en/etf-list-overview.html#header', "j
 # justetf.get_csv_and_json()
 
 
-justetf.extract_isin([], "curvo_class.csv", "justetf_class.csv", "isin_values_class.json")
+# justetf.extract_isin([], "curvo_class.csv", "justetf_class.csv", "isin_values_class.json")
+
+justetf.merge_isin("isin_values_class.json", "merged_isin_values_class.json")
 
 
 # file_path = 'justetf_class.json'
