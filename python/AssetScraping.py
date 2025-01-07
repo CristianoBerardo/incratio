@@ -40,8 +40,8 @@ class AssetScraping:
 
     def write_to_csv(self, data: list, header: list):
       try:
-        # ! da controllare se worka!
-        data = data.dropna()
+
+        # data = data.dropna() //Could not write to CSV: 'list' object has no attribute 'dropna'
         with open(self.filename_output_csv, mode='w', newline='') as file:
           writer = csv.writer(file, delimiter = ";")
           # Scrivi l'intestazione del CSV
@@ -68,6 +68,39 @@ class AssetScraping:
           json.dump(output_data, f, ensure_ascii=False, indent=4)
       except Exception as e:
         print("Could not write to JSON:", e)
+    
+    def extract_isin(self, data: list, csv_file_path_curvo: str, csv_file_path_justetf: str, json_file_isin_merge: str):
+      isin_curvo = []
+      isin_justetf = []
+      
+      try:
+        with open(csv_file_path_curvo, mode='r', encoding='ISO-8859-1') as f:
+          reader = csv.DictReader(f, delimiter=';')
+
+          for row in reader:
+            isin = row.get('ISIN')
+            if isin:
+              isin_curvo.append(isin)
+        
+        with open(csv_file_path_justetf, mode='r', encoding='ISO-8859-1') as j:
+          reader = csv.DictReader(j, delimiter=';')
+          for row in reader:
+            isin = row.get('ISIN')
+            if isin:
+              isin_justetf.append(isin)
+        
+        output_data = {
+          'curvo_isin': isin_curvo,
+          'justetf_isin': isin_justetf
+        }
+
+        with open(json_file_isin_merge, mode='w', encoding='utf-8') as json_file:
+          json.dump(output_data, json_file, ensure_ascii=False, indent=4)
+        
+        print(f"ISIN values have been written to {json_file_isin_merge}")
+
+      except Exception as e:
+        print("Could not extract ISIN:", e)
 
     def __del__(self):
       self.driver.quit()
@@ -184,21 +217,25 @@ class Curvo(AssetScraping):
 # curvo.get_json()
 # curvo.get_csv_and_json()
 
-# justetf = JustETF('https://www.justetf.com/en/etf-list-overview.html#header', "justetf_class.csv", "justetf_class.json")
+justetf = JustETF('https://www.justetf.com/en/etf-list-overview.html#header', "justetf_class.csv", "justetf_class.json")
 # justetf.get_csv_and_json()
 
-file_path = 'justetf_class.json'
-with open(file_path, 'r', encoding='utf-8') as file:
-    data = json.load(file)
-    print("numero di asset in justetf_class.json - ci sono molti null")
-    print(len(data.get('assets')))
 
-file_path = 'isin_values.json'
-with open(file_path, 'r', encoding='utf-8') as file:
-    data = json.load(file)
-    print("numero di isin effettivamente presenti in isin_values.json")
-    print(len(data.get('justetf_ISIN')))
+justetf.extract_isin([], "curvo_class.csv", "justetf_class.csv", "isin_values_class.json")
 
-print(f"il numero di null in justetf_class.json è {209}")
-print(f"\n3538 - 209 = {3538 - 209} è il numero di asset che sono effettivamentre presenti")
-print("basta non inserire i null")
+
+# file_path = 'justetf_class.json'
+# with open(file_path, 'r', encoding='utf-8') as file:
+#     data = json.load(file)
+#     print("numero di asset in justetf_class.json - ci sono molti null")
+#     print(len(data.get('assets')))
+
+# file_path = 'isin_values.json'
+# with open(file_path, 'r', encoding='utf-8') as file:
+#     data = json.load(file)
+#     print("numero di isin effettivamente presenti in isin_values.json")
+#     print(len(data.get('justetf_ISIN')))
+
+# print(f"il numero di null in justetf_class.json è {209}")
+# print(f"\n3538 - 209 = {3538 - 209} è il numero di asset che sono effettivamentre presenti")
+# print("basta non inserire i null - Could not write to CSV: 'list' object has no attribute 'dropna'")
