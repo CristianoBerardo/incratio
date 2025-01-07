@@ -40,6 +40,8 @@ class AssetScraping:
 
     def write_to_csv(self, data: list, header: list):
       try:
+        # ! da controllare se worka!
+        data = data.dropna()
         with open(self.filename_output_csv, mode='w', newline='') as file:
           writer = csv.writer(file, delimiter = ";")
           # Scrivi l'intestazione del CSV
