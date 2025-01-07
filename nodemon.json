@@ -1,6 +1,6 @@
 {
-  "watch": ["src"],
-  "ext": "ts",
+  "watch": ["apps/frontend/src/app"],
+  "ext": "ts, mjs",
   "ignore": ["src/**/*.spec.ts", "src/data/VWCE-MI.json"],
-  "exec": "ts-node ./src/index.ts"
+  "exec": "node ./apps/frontend/src/app/index.mjs"
 }

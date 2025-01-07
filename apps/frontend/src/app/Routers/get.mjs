@@ -20,9 +20,26 @@ router.get('/api/getsp500', (req, res) => {
   return res.status(200).send({ array_analysis, histogram });
 });
 
-router.get('/api/getsp500json', async (req, res) => { 
-  const __filename = fileURLToPath(import.meta.url);
+router.get('/api/getisin', async (req, res) => {
+  try {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
 
+    const filePath = path.resolve(
+      __dirname,
+      '../../../../../python/merged_isin_values_class.json'
+    );
+    const data = await fs.readFile(filePath, 'utf-8'); // Use await to read the file
+
+    return res.status(200).send(JSON.parse(data));
+  } catch (error) {
+    console.error('Error reading JSON file:', error);
+    return res.status(500).send({ error: 'Failed to read JSON file' });
+  }
+});
+
+router.get('/api/getsp500json', async (req, res) => {
+  const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
 
   const filePath = path.resolve(

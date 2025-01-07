@@ -1,5 +1,6 @@
 import { BarChart, LineChart } from '@mantine/charts';
 import {
+  Autocomplete,
   Button,
   Card,
   Center,
@@ -10,7 +11,7 @@ import {
   useCombobox,
 } from '@mantine/core';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface dataTypes {
   date: string;
@@ -188,6 +189,24 @@ function Chart() {
   const [array_analysis, setArray_analysis] = useState([]);
   const [histogram, setHistogram] = useState([]);
 
+  const [isin, setIsin] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchIsin = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/getisin', {
+          method: 'GET',
+        });
+        const json = await response.json();
+        setIsin(json.isin);
+      } catch (error) {
+        console.error('errore' + error);
+      }
+    };
+
+    fetchIsin();
+  }, []);
+
   const handlerHome = async () => {
     try {
       // const response = await fetch('http://localhost:3001/api/sp500', {
@@ -216,12 +235,20 @@ function Chart() {
   };
 
   return (
-    <Center>
-      <Card shadow="sm" padding="lg" radius="lg" withBorder={true} w="95%">
-        <Text mb="md" pl="md">
-          Total:
-        </Text>
-
+    <>
+      <Center>
+        {/* <Card shadow="sm" padding="lg" radius="lg" withBorder={true} w="95%"> */}
+        <Autocomplete
+          size="sm"
+          radius="md"
+          placeholder="Insert an ISIN"
+          limit={5}
+          data={isin}
+          comboboxProps={{
+            transitionProps: { transition: 'scale', duration: 200 },
+            shadow: 'md',
+          }}
+        />
         <Center>
           <Button onClick={handlerHome} w={230}>
             <Text size="lg">Get sp500 graph</Text>
@@ -231,88 +258,95 @@ function Chart() {
             <Text size="lg">reset</Text>
           </Button>
         </Center>
+        {/* </Card> */}
+      </Center>
+      <Center>
+        <Card shadow="sm" padding="lg" radius="lg" withBorder={true} w="95%">
+          <Text mb="md" pl="md">
+            Total:
+          </Text>
 
-        {/* <ChartMantine array_analysis={array_analysis} /> */}
+          {/* <ChartMantine array_analysis={array_analysis} /> */}
 
-        {/* <Space h={10} />
+          {/* <Space h={10} />
         <Center>
           <ComboBoxTarget arrayOfIndexes={indexes} w={230} />
         </Center>
         <Space h={10} /> */}
 
-        {/* <ChartAndComboBox
+          {/* <ChartAndComboBox
           w={230}
           data={array_analysis}
           arrayOfIndexes={indexes}
         /> */}
 
-        <LineChart
-          h={500}
-          data={array_analysis}
-          dataKey="date"
-          series={[{ name: 'Non-Annualized', color: 'indigo.6' }]}
-          curveType="linear"
-          connectNulls={false}
-          withDots={false}
-          unit="%"
-          // type="split"
-          withLegend
-          yAxisProps={{ domain: [-50, 450] }}
-          lineChartProps={{ syncId: 'date' }}
-          referenceLines={[{ y: 0, label: 'Zero', color: 'red.6' }]}
-          //withGradient = {false}
-          // h={300}
-          // data={data}
-          // dataKey="date"
-          // series={[{ name: 'Apples', color: 'indigo.6' }]}
-          // curveType="linear"
-        />
-        <Text mb="md" pl="md" mt="xl">
-          Annual Adjusted (CAGR):
-        </Text>
-        <LineChart
-          h={500}
-          data={array_analysis}
-          dataKey="date"
-          series={[{ name: 'Annualized', color: 'indigo.6' }]}
-          curveType="linear"
-          connectNulls={false}
-          withDots={false}
-          unit="%"
-          withLegend
-          yAxisProps={{ domain: [-10, 20] }}
-          lineChartProps={{ syncId: 'date' }}
-          referenceLines={[{ y: 0, label: 'Zero', color: 'red.6' }]}
-          //withGradient = {false}
-          // h={300}
-          // data={data}
-          // dataKey="date"
-          // series={[{ name: 'Apples', color: 'indigo.6' }]}
-          // curveType="linear"
-        />
-        <Text mb="md" pl="md" mt="xl">
-          Yield distribution:
-        </Text>
-        <BarChart
-          h={300}
-          data={histogram}
-          dataKey="range"
-          series={[{ name: 'count', color: 'blue' }]}
-          yAxisProps={{ domain: [0, 30] }}
-          referenceLines={[
-            {
-              x: 2,
-              color: 'red.5',
-              label: 'Profit reached',
-              labelPosition: 'insideTopRight',
-            },
-          ]}
-          gridAxis="xy"
-          type="default"
-          orientation="horizontal"
-          withBarValueLabel
-        />
-        {/*         
+          <LineChart
+            h={500}
+            data={array_analysis}
+            dataKey="date"
+            series={[{ name: 'Non-Annualized', color: 'indigo.6' }]}
+            curveType="linear"
+            connectNulls={false}
+            withDots={false}
+            unit="%"
+            // type="split"
+            withLegend
+            yAxisProps={{ domain: [-50, 450] }}
+            lineChartProps={{ syncId: 'date' }}
+            referenceLines={[{ y: 0, label: 'Zero', color: 'red.6' }]}
+            //withGradient = {false}
+            // h={300}
+            // data={data}
+            // dataKey="date"
+            // series={[{ name: 'Apples', color: 'indigo.6' }]}
+            // curveType="linear"
+          />
+          <Text mb="md" pl="md" mt="xl">
+            Annual Adjusted (CAGR):
+          </Text>
+          <LineChart
+            h={500}
+            data={array_analysis}
+            dataKey="date"
+            series={[{ name: 'Annualized', color: 'indigo.6' }]}
+            curveType="linear"
+            connectNulls={false}
+            withDots={false}
+            unit="%"
+            withLegend
+            yAxisProps={{ domain: [-10, 20] }}
+            lineChartProps={{ syncId: 'date' }}
+            referenceLines={[{ y: 0, label: 'Zero', color: 'red.6' }]}
+            //withGradient = {false}
+            // h={300}
+            // data={data}
+            // dataKey="date"
+            // series={[{ name: 'Apples', color: 'indigo.6' }]}
+            // curveType="linear"
+          />
+          <Text mb="md" pl="md" mt="xl">
+            Yield distribution:
+          </Text>
+          <BarChart
+            h={300}
+            data={histogram}
+            dataKey="range"
+            series={[{ name: 'count', color: 'blue' }]}
+            yAxisProps={{ domain: [0, 1100] }}
+            referenceLines={[
+              {
+                x: 2,
+                color: 'red.5',
+                label: 'Profit reached',
+                labelPosition: 'insideTopRight',
+              },
+            ]}
+            gridAxis="xy"
+            type="default"
+            orientation="horizontal"
+            withBarValueLabel
+          />
+          {/*         
         <Text mb="md" pl="md">
           Total:
         </Text>
@@ -419,8 +453,9 @@ function Chart() {
           // series={[{ name: 'Apples', color: 'indigo.6' }]}
           // curveType="linear"
         /> */}
-      </Card>
-    </Center>
+        </Card>
+      </Center>
+    </>
   );
 }
 
