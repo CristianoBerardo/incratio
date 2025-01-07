@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 
 import csv
 
-filename = "./python/curvo_founds.csv"
+filename = "curvo_founds.csv"
 
 #setup chrome webdriver
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -26,6 +26,7 @@ WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.TAG_NAME, 'tr'
 
 
 rows = driver.find_elements(By.TAG_NAME, 'tr')
+print(f"Righe lette: {len(rows)}")
 
 # Apri il file CSV per scrivere i dati
 with open(filename, mode='w', newline='') as file:

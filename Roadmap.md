@@ -9,6 +9,7 @@
 ---
 
 ## Best Practices
+
 - [ ] Riorganizzazione del progetto
   - [ ] Creazione di cartelle con nomi più significativi
   - [ ] Creazione di File con nomi più significativi
@@ -17,24 +18,28 @@
 - [ ] Organizzare in classi
 
 ## Dati da scaricare
-- [ ] Scaricare tutti gli asset da just etf
-  - [ ] Creare un unico set file che contenga gli asset scaricati da just etf e curvo
-  - [ ] Scaricare i dati dagli indici MSCI 
+
+- [x] Scaricare tutti gli asset da just etf
+  - [x] Creare un unico set file che contenga gli asset scaricati da just etf e curvo
+  - [ ] Scaricare i dati dagli indici MSCI
   - [ ] Scaricare i dati da Reuters
-  
+
 ## Frontend
+
 - [ ] Creazione di più pagine frontend
   - [ ] Usare dunque react router
 - [ ] Provare a modificare i grafici di mantine usando chart.js
 
 ## Script di calcolo
-- [ ] Iniziare a creare script di calcolo 
+
+- [ ] Iniziare a creare script di calcolo
   - [ ] Rolling window
   - [ ] Value at risk
   - [ ] Sharpe ratio
   - [ ] Correlazione con relativa heatmap
 
 ## Backend
+
 - [ ] Creazione delle API
 - [ ] Provare ad attaccare un database
 - [ ] Provare ad attaccare Redis
