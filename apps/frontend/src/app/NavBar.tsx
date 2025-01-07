@@ -13,9 +13,9 @@ export function NavBar() {
     console.log('Home clicked' + data);
   });
 
-  const handlerHome = () => {
-    window.open('https://github.com/CristianoBerardo');
-  };
+  function buttonPressed() {
+    console.log('Home clicked');
+  }
 
   return (
     <AppShell
@@ -29,7 +29,7 @@ export function NavBar() {
 
           <span style={{ flex: 1 }} />
 
-          <UnstyledButton onClick={handlerHome}>
+          <UnstyledButton onClick={buttonPressed}>
             <Text size="lg">Home</Text>
           </UnstyledButton>
           <UnstyledButton>
